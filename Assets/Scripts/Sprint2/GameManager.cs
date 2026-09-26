@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 using ReCiclo.Sprint1;
+using ReCiclo.Sprint3;
 using ReCiclo.Sprint4;
 using ReCiclo.Sprint5;
 
@@ -8,25 +9,50 @@ namespace ReCiclo.Sprint2
 {
     public enum GameState
     {
-        Init,
+        Ready,
         Playing,
         Paused,
         Victory,
         GameOver
     }
 
+    /// <summary>
+    /// Controlador central del ciclo de juego.
+    /// Administra estados, pausas, transiciones y expone eventos C# desacoplados.
+    /// Sprint 6: Integra PowerUpManager y EducationalPopup.
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
-        public static GameManager Instance { get; private set; }
+        private static GameManager _instance;
+        public static GameManager Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = UnityEngine.Object.FindAnyObjectByType<GameManager>();
+                return _instance;
+            }
+            private set => _instance = value;
+        }
 
         [Header("Estado del Juego")]
-        [SerializeField] private GameState currentState = GameState.Init;
+        [SerializeField] private GameState currentState = GameState.Ready;
         [SerializeField] private int currentScore = 0;
         [SerializeField] private int totalHits = 0;
         [SerializeField] private int totalErrors = 0;
 
+        // Eventos C# publicos segun especificacion de Sprint 2
+        public event Action OnGameStart;
+        public event Action OnGamePaused;
+        public event Action OnGameResumed;
+        public event Action OnVictory;
+        public event Action OnGameOver;
         public event Action<GameState> OnGameStateChanged;
         public event Action<int> OnScoreChanged;
+
+        public GameState CurrentState => currentState;
+        public int CurrentScore => currentScore;
+        public int TotalHits => totalHits;
+        public int TotalErrors => totalErrors;
 
         private void Awake()
         {
@@ -43,30 +69,35 @@ namespace ReCiclo.Sprint2
             StartGame();
         }
 
+        public void SetReady()
+        {
+            SetState(GameState.Ready);
+        }
+
         public void StartGame()
         {
             currentScore = 0;
             totalHits = 0;
             totalErrors = 0;
+
             SetState(GameState.Playing);
 
             LevelData currentLevel = WorldMapManager.Instance != null ? WorldMapManager.Instance.GetCurrentLevel() : null;
             float duration = currentLevel != null ? currentLevel.durationSeconds : 90f;
-            float spawnInterval = currentLevel != null ? currentLevel.spawnIntervalSeconds : 2.5f;
 
             if (LevelTimer.Instance != null)
             {
                 LevelTimer.Instance.StartTimer(duration);
             }
 
-            if (PollutionBar.Instance != null)
+            if (VeroHealthController.Instance != null)
             {
-                PollutionBar.Instance.ResetBar();
+                VeroHealthController.Instance.ResetHealth();
             }
 
-            if (WasteSpawner.Instance != null)
+            if (ComboSystem.Instance != null)
             {
-                WasteSpawner.Instance.StartSpawning(spawnInterval);
+                ComboSystem.Instance.ResetCombo();
             }
 
             if (currentLevel != null && currentLevel.isBossLevel && BossController.Instance != null)
@@ -79,7 +110,35 @@ namespace ReCiclo.Sprint2
                 if (AudioManager.Instance != null) AudioManager.Instance.PlayBGM(false);
             }
 
+            if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(SoundType.LevelStart);
+
+            OnGameStart?.Invoke();
             OnScoreChanged?.Invoke(currentScore);
+            Debug.Log("[GameManager] Juego iniciado en estado PLAYING.");
+        }
+
+        public void PauseGame()
+        {
+            if (currentState != GameState.Playing) return;
+            SetState(GameState.Paused);
+            Time.timeScale = 0f;
+            OnGamePaused?.Invoke();
+            Debug.Log("[GameManager] Juego pausado.");
+        }
+
+        public void ResumeGame()
+        {
+            if (currentState != GameState.Paused) return;
+            SetState(GameState.Playing);
+            Time.timeScale = 1f;
+            OnGameResumed?.Invoke();
+            Debug.Log("[GameManager] Juego reanudado.");
+        }
+
+        public void TogglePause()
+        {
+            if (currentState == GameState.Playing) PauseGame();
+            else if (currentState == GameState.Paused) ResumeGame();
         }
 
         public void SetState(GameState newState)
@@ -87,49 +146,29 @@ namespace ReCiclo.Sprint2
             currentState = newState;
             OnGameStateChanged?.Invoke(newState);
 
-            switch (newState)
+            if (newState == GameState.Playing || newState == GameState.Ready || newState == GameState.Victory || newState == GameState.GameOver)
             {
-                case GameState.Playing:
-                    Time.timeScale = 1f;
-                    break;
-                case GameState.Paused:
-                    Time.timeScale = 0f;
-                    break;
-                case GameState.Victory:
-                case GameState.GameOver:
-                    Time.timeScale = 1f;
-                    break;
+                Time.timeScale = 1f;
             }
         }
 
-        public void AddScore(int amount)
+        public void AddScore(int basePoints)
         {
-            totalHits++;
-            int multiplier = ComboSystem.Instance != null ? ComboSystem.Instance.CurrentMultiplier : 1;
-            int finalAdd = amount * multiplier;
-            currentScore += finalAdd;
+            if (currentState != GameState.Playing) return;
 
-            if (ComboSystem.Instance != null)
-            {
-                ComboSystem.Instance.AddCombo();
-            }
+            totalHits++;
+            int comboMultiplier = (ComboSystem.Instance != null) ? ComboSystem.Instance.CurrentMultiplier : 1;
+            int powerUpMultiplier = (PowerUpManager.Instance != null) ? PowerUpManager.Instance.GetScoreMultiplier() : 1;
+            int finalAdd = basePoints * comboMultiplier * powerUpMultiplier;
+            currentScore += finalAdd;
 
             OnScoreChanged?.Invoke(currentScore);
         }
 
         public void RegisterError()
         {
+            if (currentState != GameState.Playing) return;
             totalErrors++;
-
-            if (ComboSystem.Instance != null)
-            {
-                ComboSystem.Instance.ResetCombo();
-            }
-
-            if (PollutionBar.Instance != null)
-            {
-                PollutionBar.Instance.AddPollution(20f);
-            }
         }
 
         public void OnTimeExpired()
@@ -137,8 +176,7 @@ namespace ReCiclo.Sprint2
             LevelData currentLevel = WorldMapManager.Instance != null ? WorldMapManager.Instance.GetCurrentLevel() : null;
             int target = currentLevel != null ? currentLevel.targetScore : 800;
 
-            // Para ganar, el jugador debe haber acertado residuos y haber alcanzado al menos el 50% del puntaje objetivo
-            if (totalHits > 0 && currentScore >= Mathf.RoundToInt(target * 0.5f))
+            if (totalHits > 0 && currentScore >= Mathf.RoundToInt(target * 0.45f))
             {
                 TriggerVictory();
             }
@@ -150,22 +188,11 @@ namespace ReCiclo.Sprint2
 
         public void TriggerVictory()
         {
+            if (currentState == GameState.Victory) return;
             SetState(GameState.Victory);
 
-            if (WasteSpawner.Instance != null)
-            {
-                WasteSpawner.Instance.StopSpawning();
-            }
-
-            if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySFX(SoundType.Victory);
-            }
-
-            if (VisualJuiceEffects.Instance != null)
-            {
-                VisualJuiceEffects.Instance.PlayVictoryConfetti();
-            }
+            if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(SoundType.Victory);
+            if (VisualJuiceEffects.Instance != null) VisualJuiceEffects.Instance.PlayVictoryConfetti();
 
             float accuracy = (totalHits + totalErrors > 0) ? ((float)totalHits / (totalHits + totalErrors)) * 100f : 0f;
 
@@ -181,29 +208,31 @@ namespace ReCiclo.Sprint2
             {
                 EndGameUI.Instance.ShowVictory(currentScore, accuracy);
             }
+
+            // Sprint 6: Mostrar dato educativo aleatorio tras la victoria
+            if (EducationalPopup.Instance != null)
+            {
+                EducationalPopup.Instance.ShowRandomFact();
+            }
+
+            OnVictory?.Invoke();
+            Debug.Log($"[GameManager] VICTORIA! Puntaje: {currentScore}, Precision: {accuracy:F1}%");
         }
 
         public void TriggerGameOver()
         {
+            if (currentState == GameState.GameOver) return;
             SetState(GameState.GameOver);
 
-            if (WasteSpawner.Instance != null)
-            {
-                WasteSpawner.Instance.StopSpawning();
-            }
-
-            if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySFX(SoundType.GameOver);
-            }
+            if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(SoundType.GameOver);
 
             if (EndGameUI.Instance != null)
             {
                 EndGameUI.Instance.ShowGameOver(currentScore);
             }
-        }
 
-        public int CurrentScore => currentScore;
-        public GameState CurrentState => currentState;
+            OnGameOver?.Invoke();
+            Debug.Log($"[GameManager] GAME OVER. Puntaje final: {currentScore}");
+        }
     }
 }

@@ -1,0 +1,577 @@
+fileFormatVersion: 2
+guid: 43a00f15dc854bca952f7cc06b23bd07
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 100
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Waste_Electronic_Battery
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665ba922df3bedff0800000000000000
+      internalID: -9372249419500186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Electronic_Phone
+      rect:
+        serializedVersion: 2
+        x: 204.75
+        y: 0
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cde11262e6465160800000000000000
+      internalID: 7013871407798021577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Electronic_Circuit
+      rect:
+        serializedVersion: 2
+        x: 409.5
+        y: 0
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10df48d54b43a08c0800000000000000
+      internalID: -4032352567089103615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Electronic_Can
+      rect:
+        serializedVersion: 2
+        x: 614.25
+        y: 0
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9755fffa3a2ef4e80800000000000000
+      internalID: -8192080004503349895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Organic_Banana
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204.8
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3adffb541e85b840800000000000000
+      internalID: 5239249959609424445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Organic_Apple
+      rect:
+        serializedVersion: 2
+        x: 204.75
+        y: 204.8
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822e0140fb06a0050800000000000000
+      internalID: 5767528646324576808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Organic_FishBone
+      rect:
+        serializedVersion: 2
+        x: 409.5
+        y: 204.8
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d91bdcf256c34bf0800000000000000
+      internalID: -341211087018190383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Organic_Watermelon
+      rect:
+        serializedVersion: 2
+        x: 614.25
+        y: 204.8
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7816f9ed23598d70800000000000000
+      internalID: 9045852783214205050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Glass_GreenBottle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409.6
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa9de1d600a55630800000000000000
+      internalID: 3915211402220772082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Glass_BrownBottle
+      rect:
+        serializedVersion: 2
+        x: 204.75
+        y: 409.6
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df25e272522c9cbd0800000000000000
+      internalID: -2609341044257565955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Glass_Jar
+      rect:
+        serializedVersion: 2
+        x: 409.5
+        y: 409.6
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11f98a8d13d2a270800000000000000
+      internalID: 8260396790382719261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Glass_Broken
+      rect:
+        serializedVersion: 2
+        x: 614.25
+        y: 409.6
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eafbde18da28cd30800000000000000
+      internalID: 4451855339374770919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Plastic_Bottle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 614.4
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c0da785ccf33f90800000000000000
+      internalID: -6974953472551744384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Plastic_Detergent
+      rect:
+        serializedVersion: 2
+        x: 204.75
+        y: 614.4
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e8e1dff8664bc30800000000000000
+      internalID: 4374233906696588835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Plastic_Bag
+      rect:
+        serializedVersion: 2
+        x: 409.5
+        y: 614.4
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cb3bb890c0d28d0800000000000000
+      internalID: -2869624152427086725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Plastic_Cup
+      rect:
+        serializedVersion: 2
+        x: 614.25
+        y: 614.4
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5fe6fd14ad7f330800000000000000
+      internalID: 3744701591638177270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Paper_Newspaper
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 819.2
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5633eb98f7add7340800000000000000
+      internalID: 4863283413936649061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Paper_Box
+      rect:
+        serializedVersion: 2
+        x: 204.75
+        y: 819.2
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a53a0b4f433b5b0800000000000000
+      internalID: -5353877306473227720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Paper_Notebook
+      rect:
+        serializedVersion: 2
+        x: 409.5
+        y: 819.2
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01723f900a7f5ae30800000000000000
+      internalID: 4514286468242548496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Waste_Paper_MilkCarton
+      rect:
+        serializedVersion: 2
+        x: 614.25
+        y: 819.2
+        width: 204.75
+        height: 204.8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f237d7d526cbcf760800000000000000
+      internalID: 7493071010698982191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Waste_Electronic_Battery: -9372249419500186
+      Waste_Electronic_Can: -8192080004503349895
+      Waste_Electronic_Circuit: -4032352567089103615
+      Waste_Electronic_Phone: 7013871407798021577
+      Waste_Glass_Broken: 4451855339374770919
+      Waste_Glass_BrownBottle: -2609341044257565955
+      Waste_Glass_GreenBottle: 3915211402220772082
+      Waste_Glass_Jar: 8260396790382719261
+      Waste_Organic_Apple: 5767528646324576808
+      Waste_Organic_Banana: 5239249959609424445
+      Waste_Organic_FishBone: -341211087018190383
+      Waste_Organic_Watermelon: 9045852783214205050
+      Waste_Paper_Box: -5353877306473227720
+      Waste_Paper_MilkCarton: 7493071010698982191
+      Waste_Paper_Newspaper: 4863283413936649061
+      Waste_Paper_Notebook: 4514286468242548496
+      Waste_Plastic_Bag: -2869624152427086725
+      Waste_Plastic_Bottle: -6974953472551744384
+      Waste_Plastic_Cup: 3744701591638177270
+      Waste_Plastic_Detergent: 4374233906696588835
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

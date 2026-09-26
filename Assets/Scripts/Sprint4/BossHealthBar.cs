@@ -1,60 +1,107 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ReCiclo.Sprint4
 {
+    /// <summary>
+    /// Barra visual de vida de Sr. Basura en el HUD con animaciones de daño y transiciones de color.
+    /// </summary>
     public class BossHealthBar : MonoBehaviour
     {
+        private static BossHealthBar _instance;
+        public static BossHealthBar Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = UnityEngine.Object.FindAnyObjectByType<BossHealthBar>();
+                return _instance;
+            }
+            private set => _instance = value;
+        }
+
         [Header("Referencias UI")]
         [SerializeField] private Slider healthSlider;
-        [SerializeField] private Image fillImage;
-        [SerializeField] private Text hpText;
+        [SerializeField] private UnityEngine.UI.Image fillImage;
+        [SerializeField] private UnityEngine.UI.Text hpText;
         [SerializeField] private RectTransform containerTransform;
 
         [Header("Colores por Estado de Vida")]
-        [SerializeField] private Color highHealthColor = new Color(0.2f, 0.8f, 0.3f);  // Verde
-        [SerializeField] private Color mediumHealthColor = new Color(0.9f, 0.7f, 0.1f); // Amarillo
-        [SerializeField] private Color lowHealthColor = new Color(0.9f, 0.2f, 0.2f);    // Rojo
+        [SerializeField] private Color highHealthColor = new Color(0.2f, 0.8f, 0.3f);  // Verde (> 50%)
+        [SerializeField] private Color mediumHealthColor = new Color(0.95f, 0.75f, 0.1f); // Amarillo (25% - 50%)
+        [SerializeField] private Color lowHealthColor = new Color(0.92f, 0.22f, 0.22f);   // Rojo Crítico (< 25%)
 
         [Header("Efectos")]
-        [SerializeField] private float smoothSpeed = 5f;
+        [SerializeField] private float smoothSpeed = 6f;
         [SerializeField] private float shakeDuration = 0.2f;
         [SerializeField] private float shakeMagnitude = 8f;
 
-        private float targetHealth = 100f;
-        private float maxHealth = 100f;
+        [Header("Valores de Vida")]
+        [SerializeField] private float maxHealth = 500f;
+        [SerializeField] private float currentHealth = 500f;
+
+        public event Action<float, float> OnBossHealthChanged;
+        public event Action<float> OnBossDamaged;
+        public event Action OnBossDefeated;
+
+        public float CurrentHealth => currentHealth;
+        public float MaxHealth => maxHealth;
+
+        private float targetHealth = 500f;
         private Coroutine shakeCoroutine;
-        private Vector3 originalPosition;
+        private Vector2 originalPosition;
 
         private void Awake()
         {
-            if (containerTransform != null)
+            if (Instance != null && Instance != this)
             {
-                originalPosition = containerTransform.anchoredPosition;
+                Destroy(gameObject);
+                return;
             }
+            Instance = this;
+
+            if (containerTransform == null) containerTransform = GetComponent<RectTransform>();
+            if (containerTransform != null) originalPosition = containerTransform.anchoredPosition;
         }
 
         public void InitializeBar(float maxHP)
         {
             maxHealth = maxHP;
+            currentHealth = maxHP;
             targetHealth = maxHP;
+
             if (healthSlider != null)
             {
                 healthSlider.maxValue = maxHP;
                 healthSlider.value = maxHP;
             }
             UpdateHealthUI(maxHP);
+            gameObject.SetActive(true);
         }
 
-        public void SetHealth(float currentHP, bool triggerShake = true)
+        public void SetHealth(float newHealth, bool triggerShake = true)
         {
-            targetHealth = Mathf.Clamp(currentHP, 0f, maxHealth);
+            float prev = currentHealth;
+            currentHealth = Mathf.Clamp(newHealth, 0f, maxHealth);
+            targetHealth = currentHealth;
 
-            if (triggerShake && containerTransform != null)
+            float damageAmount = prev - currentHealth;
+            if (damageAmount > 0f)
             {
-                if (shakeCoroutine != null) StopCoroutine(shakeCoroutine);
-                shakeCoroutine = StartCoroutine(ShakeBarRoutine());
+                OnBossDamaged?.Invoke(damageAmount);
+                if (triggerShake && containerTransform != null)
+                {
+                    if (shakeCoroutine != null) StopCoroutine(shakeCoroutine);
+                    shakeCoroutine = StartCoroutine(ShakeBarRoutine());
+                }
+            }
+
+            OnBossHealthChanged?.Invoke(currentHealth, maxHealth);
+
+            if (currentHealth <= 0f)
+            {
+                OnBossDefeated?.Invoke();
             }
         }
 
@@ -69,6 +116,7 @@ namespace ReCiclo.Sprint4
 
         private void UpdateHealthUI(float currentValue)
         {
+            if (maxHealth <= 0f) return;
             float ratio = currentValue / maxHealth;
 
             if (fillImage != null)
@@ -85,7 +133,7 @@ namespace ReCiclo.Sprint4
 
             if (hpText != null)
             {
-                hpText.text = $"SR. BASURA: {Mathf.CeilToInt(currentValue)} / {Mathf.CeilToInt(maxHealth)} HP";
+                hpText.text = $"👑 SR. BASURA: {Mathf.CeilToInt(currentValue)} / {Mathf.CeilToInt(maxHealth)} HP";
             }
         }
 
@@ -94,12 +142,12 @@ namespace ReCiclo.Sprint4
             float elapsed = 0f;
             while (elapsed < shakeDuration)
             {
-                float x = Random.Range(-1f, 1f) * shakeMagnitude;
-                float y = Random.Range(-1f, 1f) * shakeMagnitude;
+                float x = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
+                float y = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
 
                 if (containerTransform != null)
                 {
-                    containerTransform.anchoredPosition = originalPosition + new Vector3(x, y, 0f);
+                    containerTransform.anchoredPosition = originalPosition + new Vector2(x, y);
                 }
 
                 elapsed += Time.deltaTime;

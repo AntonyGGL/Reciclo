@@ -19,13 +19,27 @@ namespace ReCiclo.Sprint6
         public List<LevelProgressData> levelsProgress = new List<LevelProgressData>();
         public float bgmVolume = 0.6f;
         public float sfxVolume = 1.0f;
+        public bool isMuted = false;
         public bool tutorialCompleted = false;
         public string lastSaveTime;
     }
 
+    /// <summary>
+    /// Sistema de guardado y persistencia local offline (Sprint 7).
+    /// Guarda estrellas, puntuaciones récord, niveles desbloqueados y ajustes de audio.
+    /// </summary>
     public class SaveSystem : MonoBehaviour
     {
-        public static SaveSystem Instance { get; private set; }
+        private static SaveSystem _instance;
+        public static SaveSystem Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = UnityEngine.Object.FindAnyObjectByType<SaveSystem>();
+                return _instance;
+            }
+            private set => _instance = value;
+        }
 
         private const string SAVE_KEY = "ReCiclo_PlayerData_v1";
 
@@ -42,23 +56,25 @@ namespace ReCiclo.Sprint6
                 return;
             }
             Instance = this;
-            DontDestroyOnLoad(gameObject);
 
-            LoadGame();
+            LoadProgress();
         }
 
-        public void SaveGame()
+        public void SaveProgress()
         {
+            if (currentData == null) currentData = new PlayerSaveData();
             currentData.lastSaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             string json = JsonUtility.ToJson(currentData, true);
             PlayerPrefs.SetString(SAVE_KEY, json);
             PlayerPrefs.Save();
 
-            Debug.Log("[SaveSystem] Datos guardados exitosamente localmente.");
+            Debug.Log("[SaveSystem] Progreso guardado localmente (Offline).");
             OnDataSaved?.Invoke();
         }
 
-        public void LoadGame()
+        public void SaveGame() => SaveProgress();
+
+        public void LoadProgress()
         {
             if (PlayerPrefs.HasKey(SAVE_KEY))
             {
@@ -66,7 +82,7 @@ namespace ReCiclo.Sprint6
                 {
                     string json = PlayerPrefs.GetString(SAVE_KEY);
                     currentData = JsonUtility.FromJson<PlayerSaveData>(json);
-                    Debug.Log($"[SaveSystem] Datos cargados. Último guardado: {currentData.lastSaveTime}");
+                    Debug.Log($"[SaveSystem] Progreso cargado. Último guardado: {currentData.lastSaveTime}");
                 }
                 catch (Exception e)
                 {
@@ -79,6 +95,96 @@ namespace ReCiclo.Sprint6
                 CreateNewSaveData();
             }
 
+            OnDataLoaded?.Invoke();
+        }
+
+        public void LoadGame() => LoadProgress();
+
+        public void SaveAudioSettings(float bgmVolume, float sfxVolume, bool isMuted = false)
+        {
+            if (currentData == null) currentData = new PlayerSaveData();
+            currentData.bgmVolume = Mathf.Clamp01(bgmVolume);
+            currentData.sfxVolume = Mathf.Clamp01(sfxVolume);
+            currentData.isMuted = isMuted;
+            SaveProgress();
+        }
+
+        public void LoadAudioSettings(out float bgmVolume, out float sfxVolume, out bool isMuted)
+        {
+            if (currentData == null) LoadProgress();
+            bgmVolume = currentData.bgmVolume;
+            sfxVolume = currentData.sfxVolume;
+            isMuted = currentData.isMuted;
+        }
+
+        public void SaveLevelResult(int levelIndex, int stars, int score)
+        {
+            LevelProgressData data = GetLevelData(levelIndex);
+            if (data != null)
+            {
+                if (stars > data.starsEarned) data.starsEarned = stars;
+                if (score > data.highScore) data.highScore = score;
+
+                // Desbloquear siguiente nivel si obtuvo al menos 1 estrella
+                if (stars > 0)
+                {
+                    UnlockLevel(levelIndex + 1);
+                }
+
+                SaveProgress();
+            }
+        }
+
+        public void UnlockLevel(int levelIndex)
+        {
+            LevelProgressData next = GetLevelData(levelIndex);
+            if (next != null)
+            {
+                next.isUnlocked = true;
+                Debug.Log($"[SaveSystem] ¡Nivel {levelIndex} desbloqueado!");
+            }
+        }
+
+        public bool IsLevelUnlocked(int levelIndex)
+        {
+            LevelProgressData data = GetLevelData(levelIndex);
+            return data != null && data.isUnlocked;
+        }
+
+        public int GetHighestUnlockedLevel()
+        {
+            if (currentData == null || currentData.levelsProgress == null) return 1;
+            int highest = 1;
+            foreach (var lvl in currentData.levelsProgress)
+            {
+                if (lvl.isUnlocked && lvl.levelIndex > highest) highest = lvl.levelIndex;
+            }
+            return highest;
+        }
+
+        public int GetLevelStars(int levelIndex)
+        {
+            LevelProgressData data = GetLevelData(levelIndex);
+            return data != null ? data.starsEarned : 0;
+        }
+
+        public int GetLevelHighScore(int levelIndex)
+        {
+            LevelProgressData data = GetLevelData(levelIndex);
+            return data != null ? data.highScore : 0;
+        }
+
+        public LevelProgressData GetLevelData(int levelIndex)
+        {
+            if (currentData == null || currentData.levelsProgress == null) return null;
+            return currentData.levelsProgress.Find(l => l.levelIndex == levelIndex);
+        }
+
+        public void ResetProgress()
+        {
+            PlayerPrefs.DeleteKey(SAVE_KEY);
+            CreateNewSaveData();
+            Debug.Log("[SaveSystem] Progreso reiniciado a estado inicial.");
             OnDataLoaded?.Invoke();
         }
 
@@ -95,38 +201,7 @@ namespace ReCiclo.Sprint6
                     highScore = 0
                 });
             }
-            SaveGame();
-        }
-
-        public LevelProgressData GetLevelData(int levelIndex)
-        {
-            return currentData.levelsProgress.Find(l => l.levelIndex == levelIndex);
-        }
-
-        public void SaveLevelResult(int levelIndex, int stars, int score)
-        {
-            LevelProgressData data = GetLevelData(levelIndex);
-            if (data != null)
-            {
-                if (stars > data.starsEarned) data.starsEarned = stars;
-                if (score > data.highScore) data.highScore = score;
-
-                // Desbloquear siguiente nivel
-                LevelProgressData nextLevelData = GetLevelData(levelIndex + 1);
-                if (nextLevelData != null && stars > 0)
-                {
-                    nextLevelData.isUnlocked = true;
-                }
-
-                SaveGame();
-            }
-        }
-
-        public void ResetProgress()
-        {
-            PlayerPrefs.DeleteKey(SAVE_KEY);
-            CreateNewSaveData();
-            Debug.Log("[SaveSystem] Progreso reiniciado por el usuario.");
+            SaveProgress();
         }
 
         public PlayerSaveData CurrentData => currentData;

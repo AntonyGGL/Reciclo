@@ -1,0 +1,1566 @@
+fileFormatVersion: 2
+guid: f15e245bd14de3f458b4183686756121
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Vero_PowerUp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e7b05f235d1a200800000000000000
+      internalID: 189667074162523715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1e82cdb5f630a90800000000000000
+      internalID: -7348907726612143661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce58f5a87f6336140800000000000000
+      internalID: 4711670071966008812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe43d450376f0d570800000000000000
+      internalID: 8489556271464002799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3977080e982a285e0800000000000000
+      internalID: -1908784578990934125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18a4d257285d0520800000000000000
+      internalID: 2669887080017209370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e584c3dd57b43f880800000000000000
+      internalID: -8578429895615690658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccace187051225630800000000000000
+      internalID: 3914227655634766540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_PowerUp_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 0
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03c31163cd207780800000000000000
+      internalID: -8687393364027129078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c3f94bec8129170800000000000000
+      internalID: 8183630748958276711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b2fee75fb7ff590800000000000000
+      internalID: -7638250148670264543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee7fb0feca1a0210800000000000000
+      internalID: 1299880918554476265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ee13577231e9700800000000000000
+      internalID: 548897264776637987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01699f27b947a6770800000000000000
+      internalID: 8604818249042466320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b928ba3b86c0004f0800000000000000
+      internalID: -864677484624641381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d14e9c183a40fad0800000000000000
+      internalID: -2670552974171946535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81385da2f64553060800000000000000
+      internalID: 6932540037843485464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Hurt_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 109.71429
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0991a6c31d3bfc1f0800000000000000
+      internalID: -1022400879146690160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 170
+        width: 90
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f3e52503fcd56390800000000000000
+      internalID: -7825605841164835853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3107a9d300c839450800000000000000
+      internalID: 6094368653423833107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53e17a86bba26b00800000000000000
+      internalID: 820406882629968731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9261c7075e1d48720800000000000000
+      internalID: 2847631647769892393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8441a49ec2e3269f0800000000000000
+      internalID: -476750247934421944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e3781364ee8c340800000000000000
+      internalID: 4884415781129371192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381dc788c3bf61e30800000000000000
+      internalID: 4474039517245657475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871b2751424e58be0800000000000000
+      internalID: -1475522459264175752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Happy_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 219.42857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e278be5ef5fbcf30800000000000000
+      internalID: 4597038317521367782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d0d7d93bafc0250800000000000000
+      internalID: 5912376060178926970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51997abc38afdef0800000000000000
+      internalID: -81161289489346211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e631867d25b4171e0800000000000000
+      internalID: -2201895923634138258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aac36b6e4ebcd2d0800000000000000
+      internalID: -3252515586849912157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d8d54b8585dfe90800000000000000
+      internalID: -6990333908602745455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a4fd20e6f00ff50800000000000000
+      internalID: 6913042393182718473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 066fd46ce39c61420800000000000000
+      internalID: 2600487106305193568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5354f5b921a52bc0800000000000000
+      internalID: -3808460709353467044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Jump_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 329.14285
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932d3d99483c29d10800000000000000
+      internalID: 2130980547983561273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c437d5541853230800000000000000
+      internalID: 3617940010582625293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3aada3e688c1f5e0800000000000000
+      internalID: -1877499087965803971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9fddd7c4975bcd0800000000000000
+      internalID: -2542993045144602114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b598139c8bcc450800000000000000
+      internalID: 6110461968693943193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe930882d74d58ce0800000000000000
+      internalID: -1403482074840548881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417350dacb8888f20800000000000000
+      internalID: 3425137860553291540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dabd2e842a9bf340800000000000000
+      internalID: 4898678501490408147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6236da1d961d990a0800000000000000
+      internalID: -6874233103784778970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Run_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 438.85715
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61bd9bbea1e577ac0800000000000000
+      internalID: -3857511086102553834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ff9832dc9bf80a0800000000000000
+      internalID: -6877073815255777488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f861ad96084d49210800000000000000
+      internalID: 1338928637232682639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c438782e29e923570800000000000000
+      internalID: 8444986604976046924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9128fdb3f9e14a0800000000000000
+      internalID: -6620679322686318143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4873d15cf3b9efa70800000000000000
+      internalID: 8862691814903986052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3bd1cc7cf3b1c070800000000000000
+      internalID: 8124973099759295292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30b3fc6c7072f750800000000000000
+      internalID: 6337251305369874491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c127ac700884200800000000000000
+      internalID: 164522157348625497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 548.5714
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3be57cd605be4e50800000000000000
+      internalID: 6795567928821803837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c477f420046cf4ef0800000000000000
+      internalID: -121660686696745140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 113.77778
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25569521cf933200800000000000000
+      internalID: 158646063796213034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 227.55556
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d651fa28b607de080800000000000000
+      internalID: -9156538860318026387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 341.33334
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5498bdecac92ee590800000000000000
+      internalID: -7643125566570526395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 455.1111
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403573ace50dd0f80800000000000000
+      internalID: -8138619846050491644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 568.8889
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6048de253121f61b0800000000000000
+      internalID: -5661286332376447994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 682.6667
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818919e8433c837f0800000000000000
+      internalID: -632541117147932648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 796.44446
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8403b16c436ca1b0800000000000000
+      internalID: -5644027053294287731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vero_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 910.2222
+        y: 658.2857
+        width: 113.77778
+        height: 109.71429
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9c2ccd11ee1af60800000000000000
+      internalID: 8043972169946024415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Vero_Happy_0: -7825605841164835853
+      Vero_Happy_1: 6094368653423833107
+      Vero_Happy_2: 820406882629968731
+      Vero_Happy_3: 2847631647769892393
+      Vero_Happy_4: -476750247934421944
+      Vero_Happy_5: 4884415781129371192
+      Vero_Happy_6: 4474039517245657475
+      Vero_Happy_7: -1475522459264175752
+      Vero_Happy_8: 4597038317521367782
+      Vero_Hurt_0: 8183630748958276711
+      Vero_Hurt_1: -7638250148670264543
+      Vero_Hurt_2: 1299880918554476265
+      Vero_Hurt_3: 548897264776637987
+      Vero_Hurt_4: 8604818249042466320
+      Vero_Hurt_5: -864677484624641381
+      Vero_Hurt_6: -2670552974171946535
+      Vero_Hurt_7: 6932540037843485464
+      Vero_Hurt_8: -1022400879146690160
+      Vero_Idle_0: -121660686696745140
+      Vero_Idle_1: 158646063796213034
+      Vero_Idle_2: -9156538860318026387
+      Vero_Idle_3: -7643125566570526395
+      Vero_Idle_4: -8138619846050491644
+      Vero_Idle_5: -5661286332376447994
+      Vero_Idle_6: -632541117147932648
+      Vero_Idle_7: -5644027053294287731
+      Vero_Idle_8: 8043972169946024415
+      Vero_Jump_0: 5912376060178926970
+      Vero_Jump_1: -81161289489346211
+      Vero_Jump_2: -2201895923634138258
+      Vero_Jump_3: -3252515586849912157
+      Vero_Jump_4: -6990333908602745455
+      Vero_Jump_5: 6913042393182718473
+      Vero_Jump_6: 2600487106305193568
+      Vero_Jump_7: -3808460709353467044
+      Vero_Jump_8: 2130980547983561273
+      Vero_PowerUp_0: 189667074162523715
+      Vero_PowerUp_1: -7348907726612143661
+      Vero_PowerUp_2: 4711670071966008812
+      Vero_PowerUp_3: 8489556271464002799
+      Vero_PowerUp_4: -1908784578990934125
+      Vero_PowerUp_5: 2669887080017209370
+      Vero_PowerUp_6: -8578429895615690658
+      Vero_PowerUp_7: 3914227655634766540
+      Vero_PowerUp_8: -8687393364027129078
+      Vero_Run_0: 3617940010582625293
+      Vero_Run_1: -1877499087965803971
+      Vero_Run_2: -2542993045144602114
+      Vero_Run_3: 6110461968693943193
+      Vero_Run_4: -1403482074840548881
+      Vero_Run_5: 3425137860553291540
+      Vero_Run_6: 4898678501490408147
+      Vero_Run_7: -6874233103784778970
+      Vero_Run_8: -3857511086102553834
+      Vero_Walk_0: -6877073815255777488
+      Vero_Walk_1: 1338928637232682639
+      Vero_Walk_2: 8444986604976046924
+      Vero_Walk_3: -6620679322686318143
+      Vero_Walk_4: 8862691814903986052
+      Vero_Walk_5: 8124973099759295292
+      Vero_Walk_6: 6337251305369874491
+      Vero_Walk_7: 164522157348625497
+      Vero_Walk_8: 6795567928821803837
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

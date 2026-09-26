@@ -1,0 +1,2049 @@
+fileFormatVersion: 2
+guid: f23bef66828c4894ae16607cbac56e51
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 100
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bin_Rainbow_Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475d8c482b13b4d70800000000000000
+      internalID: 9028364520795985268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_Open
+      rect:
+        serializedVersion: 2
+        x: 73.14286
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcc7d64e39554470800000000000000
+      internalID: 8378200805804068061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_2
+      rect:
+        serializedVersion: 2
+        x: 146.28572
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5b81faae09ee3e0800000000000000
+      internalID: -2022519845008394797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_3
+      rect:
+        serializedVersion: 2
+        x: 219.42859
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3164256006a89040800000000000000
+      internalID: 4654652735514501434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_Full
+      rect:
+        serializedVersion: 2
+        x: 292.57144
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5682cfa0813cd2aa0800000000000000
+      internalID: -6184072205278893979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_Happy
+      rect:
+        serializedVersion: 2
+        x: 365.7143
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7850bb100acdbac60800000000000000
+      internalID: 7830594956895651207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_6
+      rect:
+        serializedVersion: 2
+        x: 438.85718
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50a46a75f9fdaf90800000000000000
+      internalID: -6940616617992347555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507e905c021a0f5b0800000000000000
+      internalID: -5336588396317251835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_Error
+      rect:
+        serializedVersion: 2
+        x: 585.1429
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f0fa338fbc24e60800000000000000
+      internalID: 7945136959514414992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_9
+      rect:
+        serializedVersion: 2
+        x: 658.28577
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af9145ba19b901b20800000000000000
+      internalID: 3103151193205250554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_10
+      rect:
+        serializedVersion: 2
+        x: 731.4286
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2859daee7a82acea0800000000000000
+      internalID: -5851820064085535358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_11
+      rect:
+        serializedVersion: 2
+        x: 804.5715
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a166dd7616cc3b30800000000000000
+      internalID: 4268504346743169442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_12
+      rect:
+        serializedVersion: 2
+        x: 877.71436
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc1408c69f91c330800000000000000
+      internalID: 3729437436389104882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Rainbow_State_13
+      rect:
+        serializedVersion: 2
+        x: 950.8572
+        y: 0
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2723fdf7c131b4bd0800000000000000
+      internalID: -2644999343024688526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68f132fecfda93b0800000000000000
+      internalID: -5504841514587391889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_Open
+      rect:
+        serializedVersion: 2
+        x: 73.14286
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a866e48c78af2c50800000000000000
+      internalID: 6642713228153874601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_2
+      rect:
+        serializedVersion: 2
+        x: 146.28572
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252a6ccfd7d79eed0800000000000000
+      internalID: -2384236547650706862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_3
+      rect:
+        serializedVersion: 2
+        x: 219.42859
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f0773373b6afeb0800000000000000
+      internalID: -4685314577494765783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_Full
+      rect:
+        serializedVersion: 2
+        x: 292.57144
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333ce106cfe8c04e0800000000000000
+      internalID: -2014077718745922765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_Happy
+      rect:
+        serializedVersion: 2
+        x: 365.7143
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c6e4636bb81e5e0800000000000000
+      internalID: -1882069554552738816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_6
+      rect:
+        serializedVersion: 2
+        x: 438.85718
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ec7d5d0f0213690800000000000000
+      internalID: -7624276475409609191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22bb9c9f07b2f4e0800000000000000
+      internalID: -1949294411018161617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_Error
+      rect:
+        serializedVersion: 2
+        x: 585.1429
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62cf7f19ee1ed10d0800000000000000
+      internalID: -3450353324728517594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_9
+      rect:
+        serializedVersion: 2
+        x: 658.28577
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f8739b8d5cbd340800000000000000
+      internalID: 4889719355051839335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_10
+      rect:
+        serializedVersion: 2
+        x: 731.4286
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726b3998c73cfd8c0800000000000000
+      internalID: -3972241406665968089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_11
+      rect:
+        serializedVersion: 2
+        x: 804.5715
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a982d7a7cc3b34b0800000000000000
+      internalID: -5459703295044843102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_12
+      rect:
+        serializedVersion: 2
+        x: 877.71436
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42090be133f996100800000000000000
+      internalID: 101787508499583012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Electronic_State_13
+      rect:
+        serializedVersion: 2
+        x: 950.8572
+        y: 113.666664
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6503d9b61cf7a3c20800000000000000
+      internalID: 3187000155028926550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27bf95052ebaaa530800000000000000
+      internalID: 3867092218550025074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_Open
+      rect:
+        serializedVersion: 2
+        x: 73.14286
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38b8e58a098f5450800000000000000
+      internalID: 6079728700262758462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_2
+      rect:
+        serializedVersion: 2
+        x: 146.28572
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bddc112747e150e80800000000000000
+      internalID: -8213124859961422373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_3
+      rect:
+        serializedVersion: 2
+        x: 219.42859
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d8db91775c79320800000000000000
+      internalID: 2564735628134419734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_Full
+      rect:
+        serializedVersion: 2
+        x: 292.57144
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57edda65459bfe210800000000000000
+      internalID: 1364512983999176309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_Happy
+      rect:
+        serializedVersion: 2
+        x: 365.7143
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402e6d6383041e280800000000000000
+      internalID: -9015854368836623868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_6
+      rect:
+        serializedVersion: 2
+        x: 438.85718
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78d43d3a047e3dd0800000000000000
+      internalID: -2504436755446048643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3359e9bee6360d100800000000000000
+      internalID: 130713717244335411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_Error
+      rect:
+        serializedVersion: 2
+        x: 585.1429
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf4d36ac8d466230800000000000000
+      internalID: 3631675416000679859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_9
+      rect:
+        serializedVersion: 2
+        x: 658.28577
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda9dec15686b8500800000000000000
+      internalID: 399527775438740191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_10
+      rect:
+        serializedVersion: 2
+        x: 731.4286
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58aa322be1a45830800000000000000
+      internalID: 4059047195431315549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_11
+      rect:
+        serializedVersion: 2
+        x: 804.5715
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e2eee943570fd20800000000000000
+      internalID: 3310274594982473271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_12
+      rect:
+        serializedVersion: 2
+        x: 877.71436
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03849ab974e9e54a0800000000000000
+      internalID: -6602665973287139280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Organic_State_13
+      rect:
+        serializedVersion: 2
+        x: 950.8572
+        y: 227.33333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5aba5a4c23579b20800000000000000
+      internalID: 3141070714805336666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d6034f26f64c420800000000000000
+      internalID: 2649364951594986892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_Open
+      rect:
+        serializedVersion: 2
+        x: 73.14286
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4130e2261011046e0800000000000000
+      internalID: -1855464348836822252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_2
+      rect:
+        serializedVersion: 2
+        x: 146.28572
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b08143e248d9d840800000000000000
+      internalID: 5249464622469185719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_3
+      rect:
+        serializedVersion: 2
+        x: 219.42859
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb49c54a5eecaa40800000000000000
+      internalID: 5380937726286187505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_Full
+      rect:
+        serializedVersion: 2
+        x: 292.57144
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4a84ab8a85eceb0800000000000000
+      internalID: -4697719879597775633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_Happy
+      rect:
+        serializedVersion: 2
+        x: 365.7143
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e57b7f3944b93ba0800000000000000
+      internalID: -6108653192860699167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_6
+      rect:
+        serializedVersion: 2
+        x: 438.85718
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570edb25f05afbe70800000000000000
+      internalID: 9133200054561923189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef42bcefdd6728200800000000000000
+      internalID: 180837630882817278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_Error
+      rect:
+        serializedVersion: 2
+        x: 585.1429
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d9ccd4a1af1e860800000000000000
+      internalID: 7557596640585751861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_9
+      rect:
+        serializedVersion: 2
+        x: 658.28577
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e98c7a86f766070800000000000000
+      internalID: 8099301067340684948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_10
+      rect:
+        serializedVersion: 2
+        x: 731.4286
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63703a3ac707baab0800000000000000
+      internalID: -4995775681013807306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_11
+      rect:
+        serializedVersion: 2
+        x: 804.5715
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1dede2fa2936680800000000000000
+      internalID: -8762999168829566537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_12
+      rect:
+        serializedVersion: 2
+        x: 877.71436
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e397a0bc0876f5ad0800000000000000
+      internalID: -2711334647793813186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Glass_State_13
+      rect:
+        serializedVersion: 2
+        x: 950.8572
+        y: 341
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f2cd0df62b94980800000000000000
+      internalID: -8554109823898341481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450c89bd8f42a8640800000000000000
+      internalID: 5082915780695736404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_Open
+      rect:
+        serializedVersion: 2
+        x: 73.14286
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bfd1f8c73eb1dc0800000000000000
+      internalID: -3667087347446580369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_2
+      rect:
+        serializedVersion: 2
+        x: 146.28572
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25fa91d4c614cf240800000000000000
+      internalID: 4826804834040131410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_3
+      rect:
+        serializedVersion: 2
+        x: 219.42859
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5ed18d190c3fbd0800000000000000
+      internalID: -2597520827434015323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_Full
+      rect:
+        serializedVersion: 2
+        x: 292.57144
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e6f2168cd95e790800000000000000
+      internalID: -7501416120366174630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_Happy
+      rect:
+        serializedVersion: 2
+        x: 365.7143
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9486dffa8eeae80800000000000000
+      internalID: -8165333231807739444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_6
+      rect:
+        serializedVersion: 2
+        x: 438.85718
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33f7a848183b6060800000000000000
+      internalID: 6947708527098458938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18d8c1be00631aab0800000000000000
+      internalID: -4998654733832123007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_Error
+      rect:
+        serializedVersion: 2
+        x: 585.1429
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0800290ce91f33e20800000000000000
+      internalID: 3329270213694849152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_9
+      rect:
+        serializedVersion: 2
+        x: 658.28577
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d22d1cb445e2a10800000000000000
+      internalID: 1886537978265873721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_10
+      rect:
+        serializedVersion: 2
+        x: 731.4286
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9f26f728dc09f80800000000000000
+      internalID: -8101749769272886839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_11
+      rect:
+        serializedVersion: 2
+        x: 804.5715
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c28bef86fef90150800000000000000
+      internalID: 5839478726792544968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_12
+      rect:
+        serializedVersion: 2
+        x: 877.71436
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6ebeeb77c991e60800000000000000
+      internalID: 7933544256708011739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Plastic_State_13
+      rect:
+        serializedVersion: 2
+        x: 950.8572
+        y: 454.66666
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29982c553bbe9450800000000000000
+      internalID: 6097516783360055598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b5a5d913b765610800000000000000
+      internalID: 1609609369855089531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_Open
+      rect:
+        serializedVersion: 2
+        x: 73.14286
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90babb6902b496650800000000000000
+      internalID: 6226590563156339465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_2
+      rect:
+        serializedVersion: 2
+        x: 146.28572
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3643f11d78b17c850800000000000000
+      internalID: 6397112065846096995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_3
+      rect:
+        serializedVersion: 2
+        x: 219.42859
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1bab7a67c6e9b40800000000000000
+      internalID: 5448911856040849848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_Full
+      rect:
+        serializedVersion: 2
+        x: 292.57144
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb2729b7ef6bed60800000000000000
+      internalID: 7920547410695629766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_Happy
+      rect:
+        serializedVersion: 2
+        x: 365.7143
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5075b2d2c8014a110800000000000000
+      internalID: 1271159189064603397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_6
+      rect:
+        serializedVersion: 2
+        x: 438.85718
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67514fbdcdd359660800000000000000
+      internalID: 7391882382190843254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e63aa18c51630e0800000000000000
+      internalID: -2290619411286757731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_Error
+      rect:
+        serializedVersion: 2
+        x: 585.1429
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77654dab4a2083fa0800000000000000
+      internalID: -5820899611843996041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_9
+      rect:
+        serializedVersion: 2
+        x: 658.28577
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc4737e1bea882fe0800000000000000
+      internalID: -1213567357143518001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_10
+      rect:
+        serializedVersion: 2
+        x: 731.4286
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc57373b12c088f60800000000000000
+      internalID: 8036686873926792651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_11
+      rect:
+        serializedVersion: 2
+        x: 804.5715
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c522be8aa35e0b7d0800000000000000
+      internalID: -2904569719549124004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_12
+      rect:
+        serializedVersion: 2
+        x: 877.71436
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a2a7ca2d26847e0800000000000000
+      internalID: -1781064995648689664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bin_Paper_State_13
+      rect:
+        serializedVersion: 2
+        x: 950.8572
+        y: 568.3333
+        width: 73.14286
+        height: 113.666664
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550e5a23aac439df0800000000000000
+      internalID: -174711666659434411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bin_Electronic_Error: -3450353324728517594
+      Bin_Electronic_Full: -2014077718745922765
+      Bin_Electronic_Happy: -1882069554552738816
+      Bin_Electronic_Normal: -5504841514587391889
+      Bin_Electronic_Open: 6642713228153874601
+      Bin_Electronic_State_10: -3972241406665968089
+      Bin_Electronic_State_11: -5459703295044843102
+      Bin_Electronic_State_12: 101787508499583012
+      Bin_Electronic_State_13: 3187000155028926550
+      Bin_Electronic_State_2: -2384236547650706862
+      Bin_Electronic_State_3: -4685314577494765783
+      Bin_Electronic_State_6: -7624276475409609191
+      Bin_Electronic_State_7: -1949294411018161617
+      Bin_Electronic_State_9: 4889719355051839335
+      Bin_Glass_Error: 7557596640585751861
+      Bin_Glass_Full: -4697719879597775633
+      Bin_Glass_Happy: -6108653192860699167
+      Bin_Glass_Normal: 2649364951594986892
+      Bin_Glass_Open: -1855464348836822252
+      Bin_Glass_State_10: -4995775681013807306
+      Bin_Glass_State_11: -8762999168829566537
+      Bin_Glass_State_12: -2711334647793813186
+      Bin_Glass_State_13: -8554109823898341481
+      Bin_Glass_State_2: 5249464622469185719
+      Bin_Glass_State_3: 5380937726286187505
+      Bin_Glass_State_6: 9133200054561923189
+      Bin_Glass_State_7: 180837630882817278
+      Bin_Glass_State_9: 8099301067340684948
+      Bin_Organic_Error: 3631675416000679859
+      Bin_Organic_Full: 1364512983999176309
+      Bin_Organic_Happy: -9015854368836623868
+      Bin_Organic_Normal: 3867092218550025074
+      Bin_Organic_Open: 6079728700262758462
+      Bin_Organic_State_10: 4059047195431315549
+      Bin_Organic_State_11: 3310274594982473271
+      Bin_Organic_State_12: -6602665973287139280
+      Bin_Organic_State_13: 3141070714805336666
+      Bin_Organic_State_2: -8213124859961422373
+      Bin_Organic_State_3: 2564735628134419734
+      Bin_Organic_State_6: -2504436755446048643
+      Bin_Organic_State_7: 130713717244335411
+      Bin_Organic_State_9: 399527775438740191
+      Bin_Paper_Error: -5820899611843996041
+      Bin_Paper_Full: 7920547410695629766
+      Bin_Paper_Happy: 1271159189064603397
+      Bin_Paper_Normal: 1609609369855089531
+      Bin_Paper_Open: 6226590563156339465
+      Bin_Paper_State_10: 8036686873926792651
+      Bin_Paper_State_11: -2904569719549124004
+      Bin_Paper_State_12: -1781064995648689664
+      Bin_Paper_State_13: -174711666659434411
+      Bin_Paper_State_2: 6397112065846096995
+      Bin_Paper_State_3: 5448911856040849848
+      Bin_Paper_State_6: 7391882382190843254
+      Bin_Paper_State_7: -2290619411286757731
+      Bin_Paper_State_9: -1213567357143518001
+      Bin_Plastic_Error: 3329270213694849152
+      Bin_Plastic_Full: -7501416120366174630
+      Bin_Plastic_Happy: -8165333231807739444
+      Bin_Plastic_Normal: 5082915780695736404
+      Bin_Plastic_Open: -3667087347446580369
+      Bin_Plastic_State_10: -8101749769272886839
+      Bin_Plastic_State_11: 5839478726792544968
+      Bin_Plastic_State_12: 7933544256708011739
+      Bin_Plastic_State_13: 6097516783360055598
+      Bin_Plastic_State_2: 4826804834040131410
+      Bin_Plastic_State_3: -2597520827434015323
+      Bin_Plastic_State_6: 6947708527098458938
+      Bin_Plastic_State_7: -4998654733832123007
+      Bin_Plastic_State_9: 1886537978265873721
+      Bin_Rainbow_Error: 7945136959514414992
+      Bin_Rainbow_Full: -6184072205278893979
+      Bin_Rainbow_Happy: 7830594956895651207
+      Bin_Rainbow_Normal: 9028364520795985268
+      Bin_Rainbow_Open: 8378200805804068061
+      Bin_Rainbow_State_10: -5851820064085535358
+      Bin_Rainbow_State_11: 4268504346743169442
+      Bin_Rainbow_State_12: 3729437436389104882
+      Bin_Rainbow_State_13: -2644999343024688526
+      Bin_Rainbow_State_2: -2022519845008394797
+      Bin_Rainbow_State_3: 4654652735514501434
+      Bin_Rainbow_State_6: -6940616617992347555
+      Bin_Rainbow_State_7: -5336588396317251835
+      Bin_Rainbow_State_9: 3103151193205250554
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

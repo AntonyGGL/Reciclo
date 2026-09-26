@@ -112,3 +112,7 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Local Codex inspection files and source-image backups
+/_SpriteSourceBackup_*/
+/scripts_inspection.txt

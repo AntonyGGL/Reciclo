@@ -1,3 +1,4 @@
+using ReCiclo.Sprint6;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +54,17 @@ namespace ReCiclo.Sprint4
             DontDestroyOnLoad(gameObject);
 
             InitializeDefaultLevels();
+            SyncWithSaveSystem();
+        }
+
+        public void SyncWithSaveSystem()
+        {
+            if (SaveSystem.Instance == null) return;
+            foreach (var lvl in levels)
+            {
+                lvl.isUnlocked = SaveSystem.Instance.IsLevelUnlocked(lvl.levelIndex);
+                lvl.starsEarned = SaveSystem.Instance.GetLevelStars(lvl.levelIndex);
+            }
         }
 
         private void InitializeDefaultLevels()
