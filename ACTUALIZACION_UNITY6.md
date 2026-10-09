@@ -60,3 +60,7 @@ Esta versión consolida el trabajo visual, técnico y jugable realizado sobre el
 - Unity reconoce nuevamente todos los sprites y el fondo después de descargar los objetos de Git LFS.
 - Se verificó el inicio de la partida, generación de residuos, daño a Vero y activación de Game Over.
 
+## Enlaces del proyecto
+
+- [GDD visual en Figma — ReCiclo: Ciudad Limpia](https://www.figma.com/board/IdHrxLbqrhKgEPP8PQBZ4D/ReCiclo---Ciudad-Limpia-%257C-GDD-Visual?node-id=0-1&p=f&t=5j3vT53LV4dv0gTQ-0)
+- Video de presentación: enlace pendiente de agregar.
