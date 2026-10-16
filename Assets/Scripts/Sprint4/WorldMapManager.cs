@@ -10,7 +10,7 @@ namespace ReCiclo.Sprint4
     {
         Paper,       // Azul - Nivel 1: Plaza Central
         Plastic,     // Amarillo - Nivel 2: Mercado
-        Glass,       // Verde - Nivel 3: Parque
+        Glass,       // Verde - Nivel 3: Basurero
         Organic,     // Marrón - Nivel 4: Zona Industrial
         Electronic   // Rojo - Nivel 5: Río / Periferia (Jefe Final)
     }
@@ -76,14 +76,14 @@ namespace ReCiclo.Sprint4
                 new LevelData
                 {
                     levelIndex = 1,
-                    levelName = "Nivel 1: Plaza Central",
-                    districtName = "Plaza Central",
+                    levelName = "Nivel 1: Plaza",
+                    districtName = "Plaza",
                     primaryCategory = WasteCategory.Paper,
                     themeColor = new Color(0.2f, 0.5f, 0.9f), // Azul
                     durationSeconds = 90f,
                     targetScore = 800,
                     spawnIntervalSeconds = 2.5f,
-                    isBossLevel = false,
+                    isBossLevel = true,
                     isUnlocked = true,
                     starsEarned = 0
                 },
@@ -91,7 +91,7 @@ namespace ReCiclo.Sprint4
                 {
                     levelIndex = 2,
                     levelName = "Nivel 2: Mercado",
-                    districtName = "Mercado Municipal",
+                    districtName = "Mercado",
                     primaryCategory = WasteCategory.Plastic,
                     themeColor = new Color(0.95f, 0.8f, 0.2f), // Amarillo
                     durationSeconds = 90f,
@@ -104,41 +104,13 @@ namespace ReCiclo.Sprint4
                 new LevelData
                 {
                     levelIndex = 3,
-                    levelName = "Nivel 3: Parque",
-                    districtName = "Parque Ecológico",
+                    levelName = "Nivel 3: Basurero",
+                    districtName = "Basurero",
                     primaryCategory = WasteCategory.Glass,
-                    themeColor = new Color(0.2f, 0.75f, 0.3f), // Verde
-                    durationSeconds = 100f,
-                    targetScore = 1500,
-                    spawnIntervalSeconds = 2.0f,
-                    isBossLevel = false,
-                    isUnlocked = false,
-                    starsEarned = 0
-                },
-                new LevelData
-                {
-                    levelIndex = 4,
-                    levelName = "Nivel 4: Zona Industrial",
-                    districtName = "Zona Industrial",
-                    primaryCategory = WasteCategory.Organic,
-                    themeColor = new Color(0.55f, 0.35f, 0.2f), // Marrón
-                    durationSeconds = 110f,
-                    targetScore = 2000,
-                    spawnIntervalSeconds = 1.8f,
-                    isBossLevel = false,
-                    isUnlocked = false,
-                    starsEarned = 0
-                },
-                new LevelData
-                {
-                    levelIndex = 5,
-                    levelName = "Nivel 5: Río / Periferia - Batalla de Jefe",
-                    districtName = "Río y Periferia",
-                    primaryCategory = WasteCategory.Electronic,
-                    themeColor = new Color(0.9f, 0.25f, 0.25f), // Rojo
+                    themeColor = new Color(0.84f, 0.27f, 0.18f), // Rojo: nivel final
                     durationSeconds = 120f,
-                    targetScore = 2500,
-                    spawnIntervalSeconds = 1.5f,
+                    targetScore = 1800,
+                    spawnIntervalSeconds = 1.8f,
                     isBossLevel = true,
                     isUnlocked = false,
                     starsEarned = 0
@@ -201,6 +173,11 @@ namespace ReCiclo.Sprint4
             {
                 level.starsEarned = stars;
                 OnStarsUpdated?.Invoke(levelIndex, stars);
+            }
+
+            if (SaveSystem.Instance != null)
+            {
+                SaveSystem.Instance.SaveLevelResult(levelIndex, stars, scoreAchieved);
             }
 
             // Desbloquear siguiente nivel si fue superado con al menos 1 estrella

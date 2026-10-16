@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: fba773287ba9757478728eb1a8e09aaa
+  - enabled: 1
+    path: Assets/Scenes/MapaMundial.unity
+    guid: eafde39f9f472a4478db54c77a64ff36
+  - enabled: 1
     path: Assets/Scenes/Reciclo2D_Game.unity
     guid: 5e40518db244285418a1e97bc9c7314e
   m_configObjects:

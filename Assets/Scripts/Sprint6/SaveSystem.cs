@@ -57,6 +57,8 @@ namespace ReCiclo.Sprint6
             }
             Instance = this;
 
+            DontDestroyOnLoad(gameObject);
+
             LoadProgress();
         }
 

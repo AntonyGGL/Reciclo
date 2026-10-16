@@ -51,6 +51,11 @@ namespace ReCiclo.Sprint4
         [SerializeField] private Sprite bossHurtSprite;
         [SerializeField] private Sprite bossDefeatedSprite;
 
+        [Header("Secuencia de Jefes del Nivel 1")]
+        [SerializeField] private float canBasuraHealth = 300f;
+        [SerializeField] private float señorBasuraHealth = 500f;
+        [SerializeField] private float canBasuraFramesPerSecond = 8f;
+
         [Header("Configuración de Oleadas de Ataque")]
         [SerializeField] private int wastesPerWave = 2;
         [SerializeField] private float timeBetweenWaves = 2.5f;
@@ -78,6 +83,13 @@ namespace ReCiclo.Sprint4
         private Coroutine bobbingRoutine;
         private Vector2 initialAnchoredPos;
         private bool isBattleActive = false;
+        private bool twoBossSequence;
+        private int activeBossPhase = 1; // 0: Can Basura, 1: Señor Basura
+        private Coroutine spriteAnimationRoutine;
+        private Sprite[] canIdleFrames;
+        private Sprite[] canAttackFrames;
+        private Sprite[] canHurtFrames;
+        private Sprite[] canDefeatedFrames;
 
         private void Awake()
         {
@@ -90,6 +102,7 @@ namespace ReCiclo.Sprint4
 
             if (bossRectTransform == null) bossRectTransform = GetComponent<RectTransform>();
             if (bossRectTransform != null) initialAnchoredPos = bossRectTransform.anchoredPosition;
+            LoadCanBasuraSprites();
         }
 
         private void Start()
@@ -115,9 +128,22 @@ namespace ReCiclo.Sprint4
 
         public void StartBossBattle()
         {
+            if (isBattleActive) return;
+
+            LevelData level = WorldMapManager.Instance != null ? WorldMapManager.Instance.GetCurrentLevel() : null;
+            twoBossSequence = level != null && level.levelIndex == 1;
+            activeBossPhase = twoBossSequence ? 0 : 1;
+            bossName = activeBossPhase == 0 ? "Can Basura" : "Señor Basura";
+            maxHealth = activeBossPhase == 0 ? canBasuraHealth : señorBasuraHealth;
             currentHealth = maxHealth;
             isBattleActive = true;
             gameObject.SetActive(true);
+
+            if (bossRectTransform != null)
+            {
+                bossRectTransform.localScale = Vector3.one;
+                bossRectTransform.localRotation = Quaternion.identity;
+            }
 
             if (BossHealthBar.Instance != null)
             {
@@ -130,7 +156,9 @@ namespace ReCiclo.Sprint4
         private IEnumerator IntroSequenceRoutine()
         {
             SetBossState(BossState.Intro);
-            ShowSpeech("¡JAJAJA! ¡La ciudad será devorada por la BASURA!", 2.5f);
+            ShowSpeech(activeBossPhase == 0
+                ? "¡GRRR! ¡NADIE LIMPIARÁ MI TERRITORIO!"
+                : "¡JAJAJA! ¡Ahora te enfrentarás al SEÑOR BASURA!", 2.5f);
 
             // Descenso épico desde arriba
             if (bossRectTransform != null)
@@ -159,8 +187,13 @@ namespace ReCiclo.Sprint4
             currentState = newState;
             OnBossStateChanged?.Invoke(newState);
 
+            if (activeBossPhase == 0)
+            {
+                ApplyCanBasuraVisual(newState);
+            }
+
             // Actualizar Sprite según estado
-            if (bossImage != null)
+            if (bossImage != null && activeBossPhase == 1)
             {
                 switch (newState)
                 {
@@ -324,7 +357,7 @@ namespace ReCiclo.Sprint4
             currentHealth -= damageAmount;
             currentHealth = Mathf.Max(0f, currentHealth);
 
-            Debug.Log($"[BossController] Sr. Basura recibió {damageAmount} de daño. Vida: {currentHealth:F0}/{maxHealth}");
+            Debug.Log($"[BossController] {bossName} recibió {damageAmount} de daño. Vida: {currentHealth:F0}/{maxHealth}");
 
             if (BossHealthBar.Instance != null)
             {
@@ -406,6 +439,13 @@ namespace ReCiclo.Sprint4
         private void DefeatBoss()
         {
             if (currentState == BossState.Defeated) return;
+
+            if (twoBossSequence && activeBossPhase == 0)
+            {
+                StartCoroutine(TransitionToSecondBossRoutine());
+                return;
+            }
+
             isBattleActive = false;
             SetBossState(BossState.Defeated);
 
@@ -423,7 +463,7 @@ namespace ReCiclo.Sprint4
             }
 
             ShowSpeech("¡NOOO! ¡MI AMADA BASURA! ¡ME LAS PAGARÁS VERO...!", 3.5f);
-            Debug.LogWarning("[BossController] ¡SR. BASURA HA SIDO DERROTADO! ¡Ciudad Limpia restaurada!");
+            Debug.LogWarning($"[BossController] ¡{bossName.ToUpperInvariant()} HA SIDO DERROTADO! ¡Ciudad Limpia restaurada!");
 
             OnBossDefeated?.Invoke();
 
@@ -433,6 +473,102 @@ namespace ReCiclo.Sprint4
             }
 
             StartCoroutine(DefeatAnimationRoutine());
+        }
+
+        private IEnumerator TransitionToSecondBossRoutine()
+        {
+            isBattleActive = false;
+            if (attackLoopRoutine != null) StopCoroutine(attackLoopRoutine);
+            if (bobbingRoutine != null) StopCoroutine(bobbingRoutine);
+            SetBossState(BossState.Defeated);
+            ShowSpeech("¡AUUU! ¡SEÑOR BASURA, AYÚDAME!", 1.5f);
+            Debug.LogWarning("[BossController] Can Basura derrotado. Comienza la segunda fase.");
+
+            yield return new WaitForSeconds(1.6f);
+
+            activeBossPhase = 1;
+            bossName = "Señor Basura";
+            maxHealth = señorBasuraHealth;
+            currentHealth = maxHealth;
+            if (spriteAnimationRoutine != null)
+            {
+                StopCoroutine(spriteAnimationRoutine);
+                spriteAnimationRoutine = null;
+            }
+            if (bossRectTransform != null)
+            {
+                bossRectTransform.localScale = Vector3.one;
+                bossRectTransform.localRotation = Quaternion.identity;
+                bossRectTransform.anchoredPosition = initialAnchoredPos;
+            }
+            if (bossImage != null) bossImage.color = Color.white;
+            if (BossHealthBar.Instance != null) BossHealthBar.Instance.InitializeBar(maxHealth);
+
+            isBattleActive = true;
+            StartCoroutine(IntroSequenceRoutine());
+        }
+
+        private void LoadCanBasuraSprites()
+        {
+            Texture2D sheet = Resources.Load<Texture2D>("Bosses/CanBasura_Spritesheet");
+            if (sheet == null)
+            {
+                Debug.LogError("[BossController] No se encontró Resources/Bosses/CanBasura_Spritesheet.png");
+                return;
+            }
+
+            sheet.filterMode = FilterMode.Point;
+            sheet.wrapMode = TextureWrapMode.Clamp;
+            canIdleFrames = CreateSpriteRow(sheet, 0);
+            canAttackFrames = CreateSpriteRow(sheet, 3);
+            canHurtFrames = CreateSpriteRow(sheet, 4);
+            canDefeatedFrames = CreateSpriteRow(sheet, 5);
+        }
+
+        private static Sprite[] CreateSpriteRow(Texture2D sheet, int rowFromTop)
+        {
+            const int columns = 6;
+            const int rows = 6;
+            int cellWidth = sheet.width / columns;
+            int cellHeight = sheet.height / rows;
+            var frames = new Sprite[columns];
+            int y = sheet.height - ((rowFromTop + 1) * cellHeight);
+            for (int column = 0; column < columns; column++)
+            {
+                var rect = new Rect(column * cellWidth, y, cellWidth, cellHeight);
+                frames[column] = Sprite.Create(sheet, rect, new Vector2(.5f, .5f), 100f);
+                frames[column].name = $"CanBasura_R{rowFromTop}_F{column}";
+            }
+            return frames;
+        }
+
+        private void ApplyCanBasuraVisual(BossState state)
+        {
+            if (bossImage == null) return;
+            if (spriteAnimationRoutine != null) StopCoroutine(spriteAnimationRoutine);
+
+            Sprite[] frames = state switch
+            {
+                BossState.Attacking => canAttackFrames,
+                BossState.Hurt => canHurtFrames,
+                BossState.Defeated => canDefeatedFrames,
+                _ => canIdleFrames
+            };
+            bossImage.color = state == BossState.Hidden ? new Color(1, 1, 1, 0) : Color.white;
+            if (frames != null && frames.Length > 0)
+                spriteAnimationRoutine = StartCoroutine(AnimateCanBasuraRoutine(frames, state == BossState.Idle));
+        }
+
+        private IEnumerator AnimateCanBasuraRoutine(Sprite[] frames, bool loop)
+        {
+            do
+            {
+                for (int i = 0; i < frames.Length; i++)
+                {
+                    if (bossImage != null) bossImage.sprite = frames[i];
+                    yield return new WaitForSeconds(1f / Mathf.Max(1f, canBasuraFramesPerSecond));
+                }
+            } while (loop && activeBossPhase == 0 && currentState == BossState.Idle);
         }
 
         private IEnumerator DefeatAnimationRoutine()

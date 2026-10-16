@@ -74,7 +74,8 @@ namespace ReCiclo.Sprint6
                     levelDuration = 90f,
                     errorDamage = 10f,
                     targetScore = 800,
-                    hasBoss = false
+                    hasBoss = true,
+                    bossHealth = 300f
                 },
                 // Nivel 2: Barrio Comercial
                 new DistrictBalanceConfig

@@ -15,25 +15,9 @@ using ReCiclo.Sprint6;
 
 namespace ReCiclo.Editor
 {
-    [InitializeOnLoad]
     public static class SceneAutoBuilder
     {
         private const string SCENE_PATH = "Assets/Scenes/SampleScene.unity";
-        private const string AUTO_BUILT_FLAG = "ReCiclo_SceneAutoBuilt_v3";
-
-        static SceneAutoBuilder()
-        {
-            EditorApplication.delayCall += CheckAndAutoBuildScene;
-        }
-
-        private static void CheckAndAutoBuildScene()
-        {
-            if (!SessionState.GetBool(AUTO_BUILT_FLAG, false))
-            {
-                SessionState.SetBool(AUTO_BUILT_FLAG, true);
-                BuildFullGameScene();
-            }
-        }
 
         [MenuItem("ReCiclo/Construir Escena Completa de Juego", false, 1)]
         public static void BuildFullGameScene()
