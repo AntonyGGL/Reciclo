@@ -49,6 +49,7 @@ namespace ReCiclo.Sprint4
         public float MaxHealth => maxHealth;
 
         private float targetHealth = 500f;
+        private string bossDisplayName = "Señor Basura";
         private Coroutine shakeCoroutine;
         private Vector2 originalPosition;
 
@@ -78,6 +79,12 @@ namespace ReCiclo.Sprint4
             }
             UpdateHealthUI(maxHP);
             gameObject.SetActive(true);
+        }
+
+        public void SetBossName(string displayName)
+        {
+            bossDisplayName = string.IsNullOrWhiteSpace(displayName) ? "Enemigo" : displayName;
+            UpdateHealthUI(currentHealth);
         }
 
         public void SetHealth(float newHealth, bool triggerShake = true)
@@ -133,7 +140,12 @@ namespace ReCiclo.Sprint4
 
             if (hpText != null)
             {
-                hpText.text = $"👑 SR. BASURA: {Mathf.CeilToInt(currentValue)} / {Mathf.CeilToInt(maxHealth)} HP";
+                hpText.text = $"{bossDisplayName.ToUpperInvariant()}: {Mathf.CeilToInt(currentValue)} / {Mathf.CeilToInt(maxHealth)} HP";
+                hpText.resizeTextForBestFit = true;
+                hpText.resizeTextMinSize = 10;
+                hpText.resizeTextMaxSize = Mathf.Max(10, hpText.fontSize);
+                hpText.horizontalOverflow = HorizontalWrapMode.Wrap;
+                hpText.verticalOverflow = VerticalWrapMode.Truncate;
             }
         }
 

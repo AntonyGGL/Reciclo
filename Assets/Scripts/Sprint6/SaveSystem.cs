@@ -52,12 +52,21 @@ namespace ReCiclo.Sprint6
         {
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
+                // SaveSystem puede compartir el objeto "GAME SYSTEMS" con todos los
+                // controladores del nivel. Al venir desde el menú ya existe una copia
+                // persistente; destruir el GameObject completo también destruía
+                // GameManager, LevelTimer y el resto del ciclo de juego.
+                Destroy(this);
                 return;
             }
             Instance = this;
 
-            DontDestroyOnLoad(gameObject);
+            // Solo conservar el GameObject cuando SaveSystem vive solo. Si comparte
+            // contenedor con sistemas propios de la escena, estos no deben persistir.
+            if (GetComponents<Component>().Length <= 2)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
 
             LoadProgress();
         }

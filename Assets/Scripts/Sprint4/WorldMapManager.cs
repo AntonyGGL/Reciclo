@@ -97,7 +97,7 @@ namespace ReCiclo.Sprint4
                     durationSeconds = 90f,
                     targetScore = 1200,
                     spawnIntervalSeconds = 2.2f,
-                    isBossLevel = false,
+                    isBossLevel = true,
                     isUnlocked = false,
                     starsEarned = 0
                 },

@@ -15,6 +15,9 @@ namespace ReCiclo.UI
         private static readonly Color Cream = new Color32(247, 244, 222, 255);
         private static readonly Color Green = new Color32(42, 155, 91, 255);
         private Font font;
+        private RectTransform safeAreaRoot;
+        private Rect lastSafeArea;
+        private Vector2Int lastScreenSize;
 
         private void Awake()
         {
@@ -56,7 +59,7 @@ namespace ReCiclo.UI
             var scaler = canvasGo.GetComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080);
-            scaler.matchWidthOrHeight = .5f;
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
 
             string backgroundName = isMenu ? "ReCicloUI/MainMenu_Background_Wide" : "ReCicloUI/WorldMap_Background_v4";
             Sprite backgroundSprite = LoadSprite(backgroundName);
@@ -82,8 +85,30 @@ namespace ReCiclo.UI
             Image("ReadabilityShade", canvasGo.transform, Vector2.zero, Vector2.one,
                 isMenu ? new Color(0.02f, .10f, .09f, .28f) : new Color(.02f, .08f, .08f, .12f));
 
-            if (isMenu) BuildMainMenu(canvasGo.transform);
-            else BuildWorldMap(canvasGo.transform);
+            safeAreaRoot = Rect("SafeArea", canvasGo.transform, Vector2.zero, Vector2.one).GetComponent<RectTransform>();
+            ApplySafeArea();
+
+            if (isMenu) BuildMainMenu(safeAreaRoot);
+            else BuildWorldMap(safeAreaRoot);
+        }
+
+        private void Update()
+        {
+            if (safeAreaRoot == null) return;
+            if (lastScreenSize.x != Screen.width || lastScreenSize.y != Screen.height || lastSafeArea != Screen.safeArea)
+                ApplySafeArea();
+        }
+
+        private void ApplySafeArea()
+        {
+            if (safeAreaRoot == null || Screen.width <= 0 || Screen.height <= 0) return;
+            Rect area = Screen.safeArea;
+            safeAreaRoot.anchorMin = new Vector2(area.xMin / Screen.width, area.yMin / Screen.height);
+            safeAreaRoot.anchorMax = new Vector2(area.xMax / Screen.width, area.yMax / Screen.height);
+            safeAreaRoot.offsetMin = Vector2.zero;
+            safeAreaRoot.offsetMax = Vector2.zero;
+            lastSafeArea = area;
+            lastScreenSize = new Vector2Int(Screen.width, Screen.height);
         }
 
         private void AddDecorations(Transform root)
@@ -95,32 +120,42 @@ namespace ReCiclo.UI
 
         private void BuildMainMenu(Transform root)
         {
+            bool narrow = (float)Screen.width / Mathf.Max(1f, Screen.height) < 1.2f;
             Image("SkyVeil", root, new Vector2(0, .52f), Vector2.one, new Color(0.01f, .12f, .13f, .10f));
 
-            var titlePlaque = Image("TitlePlaque", root, new Vector2(.34f, .78f), new Vector2(.66f, .96f), Color.white);
+            // The sprite is 2:1. Use a separate region so the plaque RectTransform itself
+            // keeps that ratio; this also makes the child text fit the visible sign exactly.
+            var titleRegion = Rect("TitleRegion", root,
+                narrow ? new Vector2(.05f, .76f) : new Vector2(.27f, .70f),
+                narrow ? new Vector2(.95f, .98f) : new Vector2(.73f, .99f));
+            var titlePlaque = Image("TitlePlaque", titleRegion.transform, Vector2.zero, Vector2.one, Color.white);
             titlePlaque.sprite = LoadSprite("ReCicloUI/MainMenu_TitleSign");
             titlePlaque.preserveAspect = true;
+            var titleAspect = titlePlaque.gameObject.AddComponent<AspectRatioFitter>();
+            titleAspect.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+            titleAspect.aspectRatio = 2f;
             AddShadow(titlePlaque.gameObject, new Color(.08f, .04f, .01f, .55f), new Vector2(0, -7));
 
-            var title = Label("Title", titlePlaque.transform, "ReCiclo", new Vector2(.10f, .15f), new Vector2(.76f, .87f),
-                86, new Color32(54, 82, 45, 255));
+            var title = Label("Title", titlePlaque.transform, "ReCiclo", new Vector2(.10f, .20f), new Vector2(.78f, .82f),
+                112, new Color32(54, 82, 45, 255));
             var titleOutline = title.gameObject.AddComponent<Outline>();
             titleOutline.effectColor = new Color(1f, .91f, .66f, .62f);
             titleOutline.effectDistance = new Vector2(2, -2);
 
             var subtitle = Label("Subtitle", root, "UNA AVENTURA POR UNA CIUDAD MÁS LIMPIA",
-                new Vector2(.32f, .71f), new Vector2(.68f, .78f), 24, new Color32(255, 245, 190, 255));
+                narrow ? new Vector2(.08f, .68f) : new Vector2(.29f, .64f),
+                narrow ? new Vector2(.92f, .75f) : new Vector2(.71f, .71f), 24, new Color32(255, 245, 190, 255));
             AddShadow(subtitle.gameObject, new Color(0, 0, 0, .65f), new Vector2(0, -3));
 
-            var play = Button("Play", root, "JUGAR", new Vector2(.35f, .54f), new Vector2(.65f, .68f),
+            var play = Button("Play", root, "JUGAR", narrow ? new Vector2(.13f, .54f) : new Vector2(.35f, .54f), narrow ? new Vector2(.87f, .68f) : new Vector2(.65f, .68f),
                 Color.white, () => SceneManager.LoadScene("MapaMundial"), 38);
             StyleMenuSign(play, LoadSprite("ReCicloUI/LocationSign"));
 
-            var continueButton = Button("Continue", root, "CONTINUAR", new Vector2(.36f, .38f), new Vector2(.64f, .52f),
+            var continueButton = Button("Continue", root, "CONTINUAR", narrow ? new Vector2(.15f, .38f) : new Vector2(.36f, .38f), narrow ? new Vector2(.85f, .52f) : new Vector2(.64f, .52f),
                 Color.white, ContinueGame, 32);
             StyleMenuSign(continueButton, LoadSprite("ReCicloUI/LocationSignLevel2"));
 
-            var exit = Button("Exit", root, "SALIR", new Vector2(.38f, .23f), new Vector2(.62f, .36f),
+            var exit = Button("Exit", root, "SALIR", narrow ? new Vector2(.18f, .23f) : new Vector2(.38f, .23f), narrow ? new Vector2(.82f, .36f) : new Vector2(.62f, .36f),
                 Color.white, Quit, 29);
             StyleMenuSign(exit, LoadSprite("ReCicloUI/LocationSignLevel3"));
 
@@ -275,8 +310,10 @@ namespace ReCiclo.UI
             label.alignment = alignment;
             label.color = color;
             label.resizeTextForBestFit = true;
-            label.resizeTextMinSize = 16;
+            label.resizeTextMinSize = Mathf.Max(8, Mathf.Min(14, size / 2));
             label.resizeTextMaxSize = size;
+            label.horizontalOverflow = HorizontalWrapMode.Wrap;
+            label.verticalOverflow = VerticalWrapMode.Truncate;
             return label;
         }
 

@@ -116,3 +116,13 @@ InitTestScene*.unity*
 # Local Codex inspection files and source-image backups
 /_SpriteSourceBackup_*/
 /scripts_inspection.txt
+
+# Local recovery scenes and archived editor backups
+/Recovery_Archivado_*/
+/Assets/**/Recovery_Before_*.unity
+/Assets/**/Recovery_Before_*.unity.meta
+/Assets/**/RESPALDO_*.unity
+/Assets/**/RESPALDO_*.unity.meta
+/Assets/**/Version *.unity
+/Assets/**/Version *.unity.meta
+/Assets/_Recovery.meta

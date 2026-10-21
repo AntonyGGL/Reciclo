@@ -97,6 +97,15 @@ namespace ReCiclo.Sprint1
             // Dificultad progresiva en tiempo real
             currentFallSpeed += speedIncreaseRate * Time.deltaTime;
             spawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - (intervalDecreaseRate * Time.deltaTime));
+
+            // Una excepción aislada no debe dejar el nivel sin residuos para siempre.
+            // Si la corrutina terminó inesperadamente, se vuelve a levantar mientras
+            // la partida continúe en estado Playing.
+            if (spawnLoopRoutine == null)
+            {
+                Debug.LogWarning("[LaneSpawner] El ciclo de generación se interrumpió. Reiniciando automáticamente.");
+                spawnLoopRoutine = StartCoroutine(SpawnLoop());
+            }
         }
 
         public void StartSpawning(float initialInterval, float initialSpeed)
@@ -114,38 +123,64 @@ namespace ReCiclo.Sprint1
         public void StopSpawning()
         {
             isSpawning = false;
-            if (spawnLoopRoutine != null) StopCoroutine(spawnLoopRoutine);
+            if (spawnLoopRoutine != null)
+            {
+                StopCoroutine(spawnLoopRoutine);
+                spawnLoopRoutine = null;
+            }
             Debug.Log("[LaneSpawner] Spawner detenido.");
         }
 
         public void ClearAllActiveWaste()
         {
-            activeWasteList.RemoveAll(w => w == null);
-            foreach (var w in activeWasteList)
+            // La escena antigua contiene cinco FallingWaste ya colocados que no
+            // pertenecen a activeWasteList. Si no se eliminan, caen todos juntos,
+            // hacen 75 de daño y provocan una derrota casi inmediata.
+            FallingWaste[] allWaste = FindObjectsByType<FallingWaste>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
+
+            foreach (FallingWaste waste in allWaste)
             {
-                if (w != null)
+                if (waste != null)
                 {
-                    if (ObjectPooler.Instance != null) ObjectPooler.Instance.ReturnToPool("WasteItem", w.gameObject);
-                    else Destroy(w.gameObject);
+                    Destroy(waste.gameObject);
                 }
             }
+
             activeWasteList.Clear();
         }
 
         private IEnumerator SpawnLoop()
         {
-            // Spawn inicial inmediato
-            SpawnNextWaste();
-
+            // El tiempo de espera solo avanza mientras se juega. Así, pausar no
+            // consume el intervalo ni puede dejar la corrutina bloqueada.
+            float elapsed = spawnInterval;
             while (isSpawning)
             {
-                yield return new WaitForSeconds(spawnInterval);
-
-                if (isSpawning && GameManager.Instance != null && GameManager.Instance.CurrentState == GameState.Playing)
+                bool isPlaying = GameManager.Instance == null || GameManager.Instance.CurrentState == GameState.Playing;
+                if (isPlaying)
                 {
-                    SpawnNextWaste();
+                    elapsed += Time.unscaledDeltaTime;
+                    if (elapsed >= spawnInterval)
+                    {
+                        elapsed = 0f;
+                        try
+                        {
+                            SpawnNextWaste();
+                        }
+                        catch (System.Exception exception)
+                        {
+                            // Mantener vivo el ciclo y dejar la causa exacta en la consola.
+                            Debug.LogException(exception, this);
+                        }
+                    }
                 }
+
+                yield return null;
             }
+
+            spawnLoopRoutine = null;
         }
 
         public FallingWaste SpawnNextWaste(int forcedLane = -1)
@@ -159,15 +194,19 @@ namespace ReCiclo.Sprint1
             int wasteIndex = Random.Range(0, wastePalette.Length);
             var def = wastePalette[wasteIndex];
 
-            GameObject wasteObj = new GameObject($"Waste_Lane{lane}_{def.name}");
+            GameObject wasteObj = new GameObject(
+                $"Waste_Lane{lane}_{def.name}",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(UnityEngine.UI.Image));
             wasteObj.transform.SetParent((container != null) ? container : transform, false);
 
-            RectTransform rect = wasteObj.AddComponent<RectTransform>();
+            RectTransform rect = wasteObj.GetComponent<RectTransform>();
             rect.sizeDelta = new Vector2(150, 150);
             rect.anchoredPosition = new Vector2(posX, spawnYPosition);
 
             // Aspecto visual
-            UnityEngine.UI.Image img = wasteObj.AddComponent<UnityEngine.UI.Image>();
+            UnityEngine.UI.Image img = wasteObj.GetComponent<UnityEngine.UI.Image>();
             img.color = def.color;
 
             UnityEngine.UI.Outline outline = wasteObj.AddComponent<UnityEngine.UI.Outline>();
@@ -179,14 +218,18 @@ namespace ReCiclo.Sprint1
             shadow.effectDistance = new Vector2(3, -3);
 
             // Texto descriptivo
-            GameObject textObj = new GameObject("Label");
+            GameObject textObj = new GameObject(
+                "Label",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(UnityEngine.UI.Text));
             textObj.transform.SetParent(wasteObj.transform, false);
-            RectTransform textRect = textObj.AddComponent<RectTransform>();
+            RectTransform textRect = textObj.GetComponent<RectTransform>();
             textRect.anchorMin = Vector2.zero;
             textRect.anchorMax = Vector2.one;
             textRect.sizeDelta = Vector2.zero;
 
-            UnityEngine.UI.Text label = textObj.AddComponent<UnityEngine.UI.Text>();
+            UnityEngine.UI.Text label = textObj.GetComponent<UnityEngine.UI.Text>();
             label.text = $"{def.name}\n<size=14><b>{def.category.ToString().ToUpper()}</b></size>";
             label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf") ?? Resources.GetBuiltinResource<Font>("Arial.ttf");
             label.fontSize = 18;
@@ -224,7 +267,7 @@ namespace ReCiclo.Sprint1
             LevelData currentLevel = WorldMapManager.Instance != null ? WorldMapManager.Instance.GetCurrentLevel() : null;
             float interval = currentLevel != null ? currentLevel.spawnIntervalSeconds : 2.0f;
             float speed = (GameDifficultyBalancer.Instance != null && currentLevel != null)
-                ? GameDifficultyBalancer.Instance.GetFallSpeedForLevel(currentLevel.levelIndex) * 80f
+                ? GameDifficultyBalancer.Instance.GetFallSpeedForLevel(currentLevel.levelIndex)
                 : 360f;
 
             ClearAllActiveWaste();

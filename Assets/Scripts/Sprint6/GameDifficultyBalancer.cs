@@ -88,20 +88,22 @@ namespace ReCiclo.Sprint6
                     levelDuration = 85f,
                     errorDamage = 15f,
                     targetScore = 1200,
-                    hasBoss = false
+                    hasBoss = true,
+                    bossHealth = 400f
                 },
                 // Nivel 3: Zona Residencial
                 new DistrictBalanceConfig
                 {
                     levelIndex = 3,
-                    districtName = "Zona Residencial",
+                    districtName = "Basurero",
                     fallSpeed = 420f,
                     spawnInterval = 1.5f,
                     wastePerWave = 2,
-                    levelDuration = 80f,
+                    levelDuration = 120f,
                     errorDamage = 20f,
-                    targetScore = 1600,
-                    hasBoss = false
+                    targetScore = 1800,
+                    hasBoss = true,
+                    bossHealth = 500f
                 },
                 // Nivel 4: Zona Industrial
                 new DistrictBalanceConfig

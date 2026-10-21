@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using ReCiclo.Sprint1;
 using ReCiclo.Sprint3;
 using ReCiclo.Sprint4;
@@ -40,6 +42,9 @@ namespace ReCiclo.Sprint2
         [SerializeField] private int totalHits = 0;
         [SerializeField] private int totalErrors = 0;
 
+        [Header("Inicio del nivel")]
+        [SerializeField] private float countdownStepSeconds = 1f;
+
         // Eventos C# publicos segun especificacion de Sprint 2
         public event Action OnGameStart;
         public event Action OnGamePaused;
@@ -53,6 +58,10 @@ namespace ReCiclo.Sprint2
         public int CurrentScore => currentScore;
         public int TotalHits => totalHits;
         public int TotalErrors => totalErrors;
+
+        private Coroutine startRoutine;
+        private GameObject countdownOverlay;
+        private Text countdownText;
 
         private void Awake()
         {
@@ -76,10 +85,108 @@ namespace ReCiclo.Sprint2
 
         public void StartGame()
         {
+            if (startRoutine != null) StopCoroutine(startRoutine);
+            startRoutine = StartCoroutine(StartLevelSequence());
+        }
+
+        private IEnumerator StartLevelSequence()
+        {
+            Time.timeScale = 1f;
             currentScore = 0;
             totalHits = 0;
             totalErrors = 0;
 
+            SetState(GameState.Ready);
+
+            if (LevelTimer.Instance != null) LevelTimer.Instance.StopTimer();
+            if (LaneSpawner.Instance != null)
+            {
+                LaneSpawner.Instance.StopSpawning();
+                LaneSpawner.Instance.ClearAllActiveWaste();
+            }
+
+            EnsureCountdownUI();
+            if (countdownOverlay == null || countdownText == null)
+            {
+                startRoutine = null;
+                StartGameplay();
+                yield break;
+            }
+            countdownOverlay.SetActive(true);
+            countdownOverlay.transform.SetAsLastSibling();
+
+            string[] steps = { "3", "2", "1", "¡VAMOS!" };
+            foreach (string step in steps)
+            {
+                countdownText.text = step;
+                countdownText.fontSize = step == "¡VAMOS!" ? 108 : 180;
+                countdownText.transform.localScale = Vector3.one;
+                yield return StartCoroutine(AnimateCountdownStep(countdownStepSeconds));
+            }
+
+            countdownOverlay.SetActive(false);
+            startRoutine = null;
+            StartGameplay();
+        }
+
+        private IEnumerator AnimateCountdownStep(float duration)
+        {
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float progress = Mathf.Clamp01(elapsed / duration);
+                float scale = Mathf.Lerp(1.35f, .9f, progress);
+                countdownText.transform.localScale = Vector3.one * scale;
+                Color color = countdownText.color;
+                color.a = progress < .75f ? 1f : 1f - ((progress - .75f) / .25f);
+                countdownText.color = color;
+                yield return null;
+            }
+            Color resetColor = countdownText.color;
+            resetColor.a = 1f;
+            countdownText.color = resetColor;
+        }
+
+        private void EnsureCountdownUI()
+        {
+            if (countdownOverlay != null) return;
+            GameObject canvasObject = GameObject.Find("GameCanvas");
+            Canvas canvas = canvasObject != null ? canvasObject.GetComponent<Canvas>() : FindAnyObjectByType<Canvas>();
+            if (canvas == null) return;
+
+            countdownOverlay = new GameObject("LevelCountdown", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+            countdownOverlay.transform.SetParent(canvas.transform, false);
+            RectTransform overlayRect = countdownOverlay.GetComponent<RectTransform>();
+            overlayRect.anchorMin = Vector2.zero;
+            overlayRect.anchorMax = Vector2.one;
+            overlayRect.offsetMin = Vector2.zero;
+            overlayRect.offsetMax = Vector2.zero;
+            countdownOverlay.GetComponent<Image>().color = new Color(.02f, .08f, .10f, .48f);
+
+            GameObject textObject = new GameObject("CountdownText", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text));
+            textObject.transform.SetParent(countdownOverlay.transform, false);
+            RectTransform textRect = textObject.GetComponent<RectTransform>();
+            textRect.anchorMin = new Vector2(.2f, .3f);
+            textRect.anchorMax = new Vector2(.8f, .75f);
+            textRect.offsetMin = Vector2.zero;
+            textRect.offsetMax = Vector2.zero;
+
+            countdownText = textObject.GetComponent<Text>();
+            countdownText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            countdownText.fontStyle = FontStyle.Bold;
+            countdownText.alignment = TextAnchor.MiddleCenter;
+            countdownText.color = new Color32(255, 239, 104, 255);
+            countdownText.resizeTextForBestFit = true;
+            countdownText.resizeTextMinSize = 48;
+            countdownText.resizeTextMaxSize = 180;
+            Outline outline = textObject.AddComponent<Outline>();
+            outline.effectColor = new Color(0f, .18f, .12f, 1f);
+            outline.effectDistance = new Vector2(5f, -5f);
+        }
+
+        private void StartGameplay()
+        {
             SetState(GameState.Playing);
 
             LevelData currentLevel = WorldMapManager.Instance != null ? WorldMapManager.Instance.GetCurrentLevel() : null;
@@ -169,6 +276,11 @@ namespace ReCiclo.Sprint2
         {
             if (currentState != GameState.Playing) return;
             totalErrors++;
+
+            if (BossController.Instance != null)
+            {
+                BossController.Instance.RecoverHealthFromPlayerError();
+            }
         }
 
         public void OnTimeExpired()
@@ -190,6 +302,7 @@ namespace ReCiclo.Sprint2
         {
             if (currentState == GameState.Victory) return;
             SetState(GameState.Victory);
+            if (LevelTimer.Instance != null) LevelTimer.Instance.StopTimer();
 
             if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(SoundType.Victory);
             if (VisualJuiceEffects.Instance != null) VisualJuiceEffects.Instance.PlayVictoryConfetti();
@@ -223,6 +336,7 @@ namespace ReCiclo.Sprint2
         {
             if (currentState == GameState.GameOver) return;
             SetState(GameState.GameOver);
+            if (LevelTimer.Instance != null) LevelTimer.Instance.StopTimer();
 
             if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(SoundType.GameOver);
 

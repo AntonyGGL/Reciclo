@@ -14,6 +14,8 @@ namespace ReCiclo.Sprint6
     {
         private CanvasScaler scaler;
         private float lastAspectRatio = -1f;
+        private int lastWidth = -1;
+        private int lastHeight = -1;
 
         private void Awake()
         {
@@ -23,7 +25,7 @@ namespace ReCiclo.Sprint6
         private void Update()
         {
             float currentAspect = (float)Screen.width / Mathf.Max(1f, Screen.height);
-            if (Mathf.Abs(currentAspect - lastAspectRatio) > 0.002f)
+            if (Mathf.Abs(currentAspect - lastAspectRatio) > 0.002f || lastWidth != Screen.width || lastHeight != Screen.height)
             {
                 ApplyAdaptation();
             }
@@ -37,23 +39,27 @@ namespace ReCiclo.Sprint6
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1080, 1920);
 
-            float targetAspect = 1080f / 1920f; // 0.5625f (9:16 Portrait)
             float currentAspect = (float)Screen.width / Mathf.Max(1f, Screen.height);
             lastAspectRatio = currentAspect;
+            lastWidth = Screen.width;
+            lastHeight = Screen.height;
 
-            if (currentAspect <= targetAspect)
+            // Conserva visible toda el área de diseño en móviles, tablets y pantallas horizontales.
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
+            ApplyTextSafety();
+        }
+
+        private void ApplyTextSafety()
+        {
+            Text[] labels = GetComponentsInChildren<Text>(true);
+            foreach (Text label in labels)
             {
-                // Móvil vertical estándar o alto (9:16, 9:19, 9:20)
-                // Igualar ancho (0) para asegurar los 1080px horizontales
-                scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
-                scaler.matchWidthOrHeight = 0f;
-            }
-            else
-            {
-                // Pantalla más ancha (Editor en Free Aspect, tablet 4:3, laptop)
-                // Igualar alto (1) para asegurar que los 1920px verticales no se corten
-                scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
-                scaler.matchWidthOrHeight = 1f;
+                int configuredSize = Mathf.Max(10, label.fontSize);
+                label.resizeTextForBestFit = true;
+                label.resizeTextMinSize = Mathf.Min(10, configuredSize);
+                label.resizeTextMaxSize = configuredSize;
+                label.horizontalOverflow = HorizontalWrapMode.Wrap;
+                label.verticalOverflow = VerticalWrapMode.Truncate;
             }
         }
     }

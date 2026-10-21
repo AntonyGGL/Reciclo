@@ -408,7 +408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f6ce5ab1e82421bb39bf59af6ac7132, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c01db1c988ca4c3d9b72e3d142a1e801, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 61503925}
   - component: {fileID: 61503924}
   m_Layer: 0
-  m_Name: BtnRestartVictory
+  m_Name: BtnMapVictory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,6 +1224,7 @@ MonoBehaviour:
   gameOverScoreText: {fileID: 256778000}
   victoryRestartButton: {fileID: 61503924}
   gameOverRestartButton: {fileID: 1978622130}
+  worldMapSceneName: MapaMundial
 --- !u!1 &249018834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,7 +2306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f6ce5ab1e82421bb39bf59af6ac7132, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c01db1c988ca4c3d9b72e3d142a1e801, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3176,7 +3177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18, g: 0.48, b: 0.92, a: 0.25}
+  m_Color: {r: 0.18, g: 0.48, b: 0.92, a: 0.1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4238,7 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15, g: 0.75, b: 0.38, a: 0.25}
+  m_Color: {r: 0.15, g: 0.75, b: 0.38, a: 0.1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5425,7 +5426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.95, g: 0.75, b: 0.08, a: 0.25}
+  m_Color: {r: 0.95, g: 0.75, b: 0.08, a: 0.1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6643,7 +6644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.65, g: 0.38, b: 0.18, a: 0.25}
+  m_Color: {r: 0.65, g: 0.38, b: 0.18, a: 0.1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8195,7 +8196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f6ce5ab1e82421bb39bf59af6ac7132, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c01db1c988ca4c3d9b72e3d142a1e801, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8342,7 +8343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92, g: 0.22, b: 0.22, a: 0.25}
+  m_Color: {r: 0.92, g: 0.22, b: 0.22, a: 0.1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9768,7 +9769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONTINUAR
+  m_Text: IR AL MAPA
 --- !u!222 &1849429753
 CanvasRenderer:
   m_ObjectHideFlags: 0

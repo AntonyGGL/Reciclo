@@ -96,6 +96,24 @@ namespace ReCiclo.Sprint5
             Instance = this;
 
             InitializeDefaultThemes();
+            ConfigureWidescreenBackgrounds();
+        }
+
+        private void ConfigureWidescreenBackgrounds()
+        {
+            ConfigureWidescreenImage(dirtyImage);
+            ConfigureWidescreenImage(midImage);
+            ConfigureWidescreenImage(cleanImage);
+        }
+
+        private static void ConfigureWidescreenImage(UnityEngine.UI.Image image)
+        {
+            if (image == null || image.sprite == null) return;
+            image.preserveAspect = true;
+            AspectRatioFitter fitter = image.GetComponent<AspectRatioFitter>();
+            if (fitter == null) fitter = image.gameObject.AddComponent<AspectRatioFitter>();
+            fitter.aspectMode = AspectRatioFitter.AspectMode.EnvelopeParent;
+            fitter.aspectRatio = image.sprite.rect.width / image.sprite.rect.height;
         }
 
         private void Start()
@@ -283,21 +301,24 @@ namespace ReCiclo.Sprint5
 
             if (dirtyImage != null)
             {
-                dirtyImage.color = theme.dirtyColor;
+                dirtyImage.color = theme.dirtySprite != null ? Color.white : theme.dirtyColor;
                 if (theme.dirtySprite != null) dirtyImage.sprite = theme.dirtySprite;
             }
 
             if (midImage != null)
             {
-                midImage.color = theme.midColor;
+                midImage.color = theme.midSprite != null ? Color.white : theme.midColor;
                 if (theme.midSprite != null) midImage.sprite = theme.midSprite;
             }
 
             if (cleanImage != null)
             {
-                cleanImage.color = theme.cleanColor;
+                cleanImage.color = theme.cleanSprite != null ? Color.white : theme.cleanColor;
                 if (theme.cleanSprite != null) cleanImage.sprite = theme.cleanSprite;
             }
+
+            // Actualiza la proporción cuando el nuevo barrio usa una imagen de otro tamaño.
+            ConfigureWidescreenBackgrounds();
 
             if (districtLabelText != null)
             {
@@ -312,6 +333,11 @@ namespace ReCiclo.Sprint5
         {
             if (districtThemes != null && districtThemes.Count >= 5) return;
 
+            Sprite marketDirtySprite = Resources.Load<Sprite>("Backgrounds/Mercado_Dirty");
+            Sprite marketCleanSprite = Resources.Load<Sprite>("Backgrounds/Mercado_Clean");
+            Sprite landfillDirtySprite = Resources.Load<Sprite>("Backgrounds/Basurero_Dirty");
+            Sprite landfillCleanSprite = Resources.Load<Sprite>("Backgrounds/Basurero_Clean");
+
             districtThemes = new List<DistrictThemeData>
             {
                 new DistrictThemeData
@@ -324,13 +350,19 @@ namespace ReCiclo.Sprint5
                 new DistrictThemeData
                 {
                     districtName = "Mercado Municipal",
+                    dirtySprite = marketDirtySprite,
+                    midSprite = marketDirtySprite,
+                    cleanSprite = marketCleanSprite,
                     dirtyColor = new Color(0.32f, 0.28f, 0.18f, 1f), // Ocre sucio
                     midColor = new Color(0.65f, 0.60f, 0.35f, 1f),   // Amarillo pálido
                     cleanColor = new Color(0.95f, 0.80f, 0.20f, 1f)  // Amarillo brillante y limpio
                 },
                 new DistrictThemeData
                 {
-                    districtName = "Parque Ecológico",
+                    districtName = "Basurero Final",
+                    dirtySprite = landfillDirtySprite,
+                    midSprite = landfillDirtySprite,
+                    cleanSprite = landfillCleanSprite,
                     dirtyColor = new Color(0.22f, 0.28f, 0.20f, 1f), // Verde marchito/oscuro
                     midColor = new Color(0.35f, 0.60f, 0.30f, 1f),   // Verde en brote
                     cleanColor = new Color(0.20f, 0.85f, 0.35f, 1f)  // Verde esmeralda resplandeciente

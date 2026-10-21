@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using ReCiclo.Sprint4;
 
 namespace ReCiclo.Sprint5
 {
@@ -32,6 +33,9 @@ namespace ReCiclo.Sprint5
         [Header("Clips de Audio - BGM")]
         [SerializeField] private AudioClip mainThemeBGM;
         [SerializeField] private AudioClip bossThemeBGM;
+        [SerializeField] private AudioClip firstBossThemeBGM;
+        [SerializeField] private AudioClip secondLevelThemeBGM;
+        [SerializeField] private AudioClip finalLevelThemeBGM;
         [SerializeField] private AudioClip menuThemeBGM;
         [SerializeField] private AudioClip victoryThemeBGM;
 
@@ -73,14 +77,34 @@ namespace ReCiclo.Sprint5
                 return;
             }
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // No convertir en persistente el contenedor completo del nivel cuando
+            // AudioManager comparte GameObject con GameManager y otros sistemas.
+            // Un AudioManager independiente sí puede sobrevivir entre escenas.
+            if (GetComponents<Component>().Length <= 2)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
 
             if (bgmAudioSource == null) bgmAudioSource = gameObject.AddComponent<AudioSource>();
             if (sfxAudioSource == null) sfxAudioSource = gameObject.AddComponent<AudioSource>();
 
             bgmAudioSource.loop = true;
             bgmAudioSource.playOnAwake = false;
+            bgmAudioSource.spatialBlend = 0f;
             sfxAudioSource.playOnAwake = false;
+
+            if (firstBossThemeBGM == null)
+            {
+                firstBossThemeBGM = Resources.Load<AudioClip>("Audio/Sorting_the_Chaos");
+            }
+            if (secondLevelThemeBGM == null)
+            {
+                secondLevelThemeBGM = Resources.Load<AudioClip>("Audio/Plaza_Morning_Sort");
+            }
+            if (finalLevelThemeBGM == null)
+            {
+                finalLevelThemeBGM = Resources.Load<AudioClip>("Audio/Final_Reclamation");
+            }
 
             LoadVolumeSettings();
         }
@@ -92,7 +116,7 @@ namespace ReCiclo.Sprint5
 
         public void PlayBGM(bool isBossBattle)
         {
-            AudioClip targetClip = isBossBattle ? bossThemeBGM : mainThemeBGM;
+            AudioClip targetClip = ResolveBGMClip(isBossBattle);
             if (targetClip != null && bgmAudioSource.clip != targetClip)
             {
                 if (fadeRoutine != null) StopCoroutine(fadeRoutine);
@@ -104,6 +128,35 @@ namespace ReCiclo.Sprint5
                 bgmAudioSource.volume = bgmVolume;
                 bgmAudioSource.Play();
             }
+        }
+
+        private AudioClip ResolveBGMClip(bool isBossBattle)
+        {
+            LevelData currentLevel = WorldMapManager.Instance != null
+                ? WorldMapManager.Instance.GetCurrentLevel()
+                : null;
+
+            // Plaza Morning Sort pertenece exclusivamente al nivel 2: Mercado.
+            if (currentLevel != null && currentLevel.levelIndex == 2 && secondLevelThemeBGM != null)
+            {
+                return secondLevelThemeBGM;
+            }
+
+            if (!isBossBattle) return mainThemeBGM;
+
+            // Final Reclamation pertenece exclusivamente al nivel 3: Basurero Final.
+            if (currentLevel != null && currentLevel.levelIndex == 3 && finalLevelThemeBGM != null)
+            {
+                return finalLevelThemeBGM;
+            }
+
+            // Sorting the Chaos pertenece exclusivamente a Can Basura, jefe del nivel 1.
+            if (currentLevel != null && currentLevel.levelIndex == 1 && firstBossThemeBGM != null)
+            {
+                return firstBossThemeBGM;
+            }
+
+            return bossThemeBGM;
         }
 
         public void PlayMenuBGM()

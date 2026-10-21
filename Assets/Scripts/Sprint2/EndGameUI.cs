@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using ReCiclo.Sprint4;
 using ReCiclo.Sprint6;
@@ -38,6 +39,7 @@ namespace ReCiclo.Sprint2
         [Header("Botones")]
         [SerializeField] private Button victoryRestartButton;
         [SerializeField] private Button gameOverRestartButton;
+        [SerializeField] private string worldMapSceneName = "MapaMundial";
 
         private void Awake()
         {
@@ -48,10 +50,7 @@ namespace ReCiclo.Sprint2
             }
             Instance = this;
 
-            if (victoryRestartButton != null)
-            {
-                victoryRestartButton.onClick.AddListener(OnRestartButtonClicked);
-            }
+            BindVictoryMapButton();
 
             if (gameOverRestartButton != null)
             {
@@ -65,6 +64,7 @@ namespace ReCiclo.Sprint2
             if (gameOverModal != null) gameOverModal.SetActive(false);
 
             EnsureVictoryPresentation();
+            BindVictoryMapButton();
             ShowRandomVictoryMessage();
 
             if (victoryScoreText != null) victoryScoreText.text = $"Puntaje: {finalScore}";
@@ -113,6 +113,13 @@ namespace ReCiclo.Sprint2
             modalCanvas.overrideSorting = true;
             modalCanvas.sortingOrder = 1000;
             modalCanvas.pixelPerfect = true;
+
+            // Un Canvas anidado con orden propio necesita su propio raycaster.
+            // Sin este componente el botón se dibuja, pero no recibe clics.
+            if (victoryModal.GetComponent<GraphicRaycaster>() == null)
+            {
+                victoryModal.AddComponent<GraphicRaycaster>();
+            }
 
             if (victoryVeroImage == null)
             {
@@ -192,6 +199,36 @@ namespace ReCiclo.Sprint2
             {
                 GameManager.Instance.StartGame();
             }
+        }
+
+        public void OnMapButtonClicked()
+        {
+            // Evita que el mapa se abra congelado si el juego terminó en pausa.
+            Time.timeScale = 1f;
+
+            if (victoryModal != null) victoryModal.SetActive(false);
+            if (gameOverModal != null) gameOverModal.SetActive(false);
+
+            string sceneName = string.IsNullOrWhiteSpace(worldMapSceneName)
+                ? "MapaMundial"
+                : worldMapSceneName;
+            SceneManager.LoadScene(sceneName);
+        }
+
+        private void BindVictoryMapButton()
+        {
+            if (victoryRestartButton == null) return;
+
+            victoryRestartButton.interactable = true;
+            victoryRestartButton.onClick.RemoveListener(OnMapButtonClicked);
+            victoryRestartButton.onClick.AddListener(OnMapButtonClicked);
+            SetButtonLabel(victoryRestartButton, "IR AL MAPA");
+        }
+
+        private static void SetButtonLabel(Button button, string label)
+        {
+            Text buttonText = button != null ? button.GetComponentInChildren<Text>(true) : null;
+            if (buttonText != null) buttonText.text = label;
         }
     }
 }
